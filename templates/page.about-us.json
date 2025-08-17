@@ -1,1 +1,206 @@
-{"sections":{"main":{"type":"main-page","settings":{}},"newsletter":{"type":"newsletter","disabled":true,"settings":{"title":"Newsletter","content":"<p>A short sentence describing what someone will receive by subscribing<\/p>","background":"#1e2d7d","text":"#ffffff"}},"about_kccGNB":{"type":"about","disabled":true,"custom_css":["@media screen and (min-width: 641px) {#about .section-container {padding: 0 var(--desktop-container-gutter); }}"," \/*Carla added code so padding for this section is align with the next section*\/"],"settings":{"title":"","subtitle":"We Supply Solutions","description":"<p>Factory Direct Supply offers a <strong>vast diversity of products<\/strong> and extensive experience in structural steel fabrication which makes us the go-to source for construction supplies and expert structural steel fabrication projects.<\/p>","image":"shopify:\/\/shop_images\/FDS_600x_03_weld.jpg","image_alt":"Factory Direct Supply","button_text":"Locations","button_link":"shopify:\/\/pages\/locations"}},"image_with_text_pz9bcA":{"type":"image-with-text","name":"Image with text","settings":{"image":"shopify:\/\/shop_images\/Welder_2.1_1200x800_d4a7a41f-fd8b-456a-a5c3-774de370b3ab.jpg","image_position":"left","image_width":50,"title":"We Supply solutions","content":"<p>With 6 locations in Florida; Factory Direct Supply offers a <strong>vast diversity of products<\/strong> and extensive experience in structural steel fabrication which makes us the go-to source for construction supplies and expert structural steel fabrication projects.<\/p>","button_text":"Locations","button_link":"shopify:\/\/pages\/locations"}},"image_with_text_QXGi3t":{"type":"image-with-text","name":"Image with text","settings":{"image":"shopify:\/\/shop_images\/FDS_truck_1200x800_8788dc5d-736c-40f8-8792-ca23b790b919.jpg","image_position":"left","image_width":50,"title":"Services","content":"<ul><li>Structural Steel Fabrication<\/li><li>3000 tons per month rebar capacity<\/li><li>6 in house detailers and over 13 outside detailers<\/li><li>2 red iron fabrication locations with state of the art equipment and more than 15 Weld stations<\/li><li>Over 1000 completed projects ranging from $10,000 to $4,500,000<\/li><li>5 estimators and detailers inside<\/li><li>7 install crews from 3 men to 20 men<\/li><li>AISC certification pending<\/li><\/ul>","button_text":"","button_link":"shopify:\/\/pages\/locations"}},"page_cold_formed_steel_connectors_wVLGAw":{"type":"page-cold-formed-steel-connectors","blocks":{"offer_FFE4pY":{"type":"offer","settings":{"image":"shopify:\/\/shop_images\/Maule_480x_817b7f22-7440-4aa8-9f36-dc3ab8f365b7.jpg","blk_links":"shopify:\/\/collections\/all","title":"","content":"<p>Our huge selection of building materials and affordable prices along with our fast and friendly service places us at the top of the building material industry.<\/p>"}},"offer_ArG8TX":{"type":"offer","settings":{"image":"shopify:\/\/shop_images\/FDS_600x_05_truck.jpg","blk_links":"shopify:\/\/collections\/all","title":"","content":"<p>Same Day and Next Day Delivery, we count with over 20 delivery trucks, including 4 tractors and 10 trailers with full tracking and GPS system to ensure on-time deliveries. <\/p>"}},"offer_xmCEzc":{"type":"offer","settings":{"image":"shopify:\/\/shop_images\/maule_02_480x_e50b014e-2ea3-4f4f-838f-eb3c036853ea.jpg","blk_links":"shopify:\/\/collections\/all","title":"","content":"<p>We make it a priority to keep our prices competitive. This is what sets us apart and keeps us ahead of the big name competition.<\/p>"}},"offer_TpPy9R":{"type":"offer","settings":{"image":"shopify:\/\/shop_images\/FDS_600x_04.jpg","blk_links":"shopify:\/\/pages\/locations","title":"","content":"<p>Our clients include General Contractors, Shell Contractors as well as Specialty Contractors serving commercial, residential, marine and infrastructure construction projects.<\/p>"}},"offer_yYTf7Q":{"type":"offer","settings":{"image":"shopify:\/\/shop_images\/FDS_600x_06_truck.jpg","blk_links":"shopify:\/\/pages\/locations","title":"","content":"<p>We take pride in providing our contractors a comprehensive and reliable supply chain of the materials required to keep their jobs running on time and on budget<\/p>"}},"offer_MXTpCq":{"type":"offer","settings":{"image":"shopify:\/\/shop_images\/fds_rebar.jpg","blk_links":"shopify:\/\/pages\/locations","title":"","content":"<p>Factory Direct Supply is a leading distributor of building materials serving all of South Florida and the Treasure Coast. <\/p><p>Call us today for all your project needs!<\/p>"}}},"block_order":["offer_FFE4pY","offer_ArG8TX","offer_xmCEzc","offer_TpPy9R","offer_yYTf7Q","offer_MXTpCq"],"settings":{"items_per_row":4,"stack_mobile":true}},"free_shipping_easy_return_FDCPkh":{"type":"free-shipping-easy-return","blocks":{"item_jHcEXd":{"type":"item","settings":{"icon":"bi-add-to-cart","title":"Financing Available","content":"<p>Short content about your store<\/p>","iconurl":"\/"}},"item_Vd8EgN":{"type":"item","settings":{"icon":"bi-returns","title":"Satisfied or refunded","content":"<p>Short content about your store<\/p>","iconurl":"\/"}},"item_cCpUDR":{"type":"item","settings":{"icon":"bi-customer-support","title":"Top-notch support","content":"<p>Short content about your store<\/p>","iconurl":"\/"}},"item_y7bR6K":{"type":"item","settings":{"icon":"bi-secure-payment","title":"Secure payments","content":"<p>Short content about your store<\/p>","iconurl":"\/"}}},"block_order":["item_jHcEXd","item_Vd8EgN","item_cCpUDR","item_y7bR6K"],"settings":{"heading":"Free Shipping & Easy Returns","description":"Products are shipped to your home by our Delivery Team","button1_text":"Free Shipping","button1_link":"\/","button2_text":"Easy Returns & Exchanges","button2_link":"\/","stack_mobile":false}}},"order":["main","newsletter","about_kccGNB","image_with_text_pz9bcA","image_with_text_QXGi3t","page_cold_formed_steel_connectors_wVLGAw","free_shipping_easy_return_FDCPkh"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "title": "Newsletter",
+        "content": "<p>A short sentence describing what someone will receive by subscribing</p>",
+        "background": "#1e2d7d",
+        "text": "#ffffff"
+      }
+    },
+    "about_kccGNB": {
+      "type": "about",
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (min-width: 641px) {#about .section-container {padding: 0 var(--desktop-container-gutter); }}",
+        " /*Carla added code so padding for this section is align with the next section*/"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": "We Supply Solutions",
+        "description": "<p>Factory Direct Supply offers a <strong>vast diversity of products</strong> and extensive experience in structural steel fabrication which makes us the go-to source for construction supplies and expert structural steel fabrication projects.</p>",
+        "image": "shopify://shop_images/FDS_600x_03_weld.jpg",
+        "image_alt": "Factory Direct Supply",
+        "button_text": "Locations",
+        "button_link": "shopify://pages/locations"
+      }
+    },
+    "image_with_text_pz9bcA": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/Welder_2.1_1200x800_d4a7a41f-fd8b-456a-a5c3-774de370b3ab.jpg",
+        "image_position": "left",
+        "image_width": 50,
+        "title": "We Supply solutions",
+        "content": "<p>With 6 locations in Florida; Factory Direct Supply offers a <strong>vast diversity of products</strong> and extensive experience in structural steel fabrication which makes us the go-to source for construction supplies and expert structural steel fabrication projects.</p>",
+        "button_text": "Locations",
+        "button_link": "shopify://pages/locations"
+      }
+    },
+    "image_with_text_QXGi3t": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/FDS_truck_1200x800_8788dc5d-736c-40f8-8792-ca23b790b919.jpg",
+        "image_position": "left",
+        "image_width": 50,
+        "title": "Services",
+        "content": "<ul><li>Structural Steel Fabrication</li><li>3000 tons per month rebar capacity</li><li>6 in house detailers and over 13 outside detailers</li><li>2 red iron fabrication locations with state of the art equipment and more than 15 Weld stations</li><li>Over 1000 completed projects ranging from $10,000 to $4,500,000</li><li>5 estimators and detailers inside</li><li>7 install crews from 3 men to 20 men</li><li>AISC certification pending</li></ul>",
+        "button_text": "",
+        "button_link": "shopify://pages/locations"
+      }
+    },
+    "page_cold_formed_steel_connectors_wVLGAw": {
+      "type": "page-cold-formed-steel-connectors",
+      "blocks": {
+        "offer_FFE4pY": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/Maule_480x_817b7f22-7440-4aa8-9f36-dc3ab8f365b7.jpg",
+            "blk_links": "shopify://collections/all",
+            "title": "",
+            "content": "<p>Our huge selection of building materials and affordable prices along with our fast and friendly service places us at the top of the building material industry.</p>"
+          }
+        },
+        "offer_ArG8TX": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/FDS_600x_05_truck.jpg",
+            "blk_links": "shopify://collections/all",
+            "title": "",
+            "content": "<p>Same Day and Next Day Delivery, we count with over 20 delivery trucks, including 4 tractors and 10 trailers with full tracking and GPS system to ensure on-time deliveries. </p>"
+          }
+        },
+        "offer_xmCEzc": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/maule_02_480x_e50b014e-2ea3-4f4f-838f-eb3c036853ea.jpg",
+            "blk_links": "shopify://collections/all",
+            "title": "",
+            "content": "<p>We make it a priority to keep our prices competitive. This is what sets us apart and keeps us ahead of the big name competition.</p>"
+          }
+        },
+        "offer_TpPy9R": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/FDS_600x_04.jpg",
+            "blk_links": "shopify://pages/locations",
+            "title": "",
+            "content": "<p>Our clients include General Contractors, Shell Contractors as well as Specialty Contractors serving commercial, residential, marine and infrastructure construction projects.</p>"
+          }
+        },
+        "offer_yYTf7Q": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/FDS_600x_06_truck.jpg",
+            "blk_links": "shopify://pages/locations",
+            "title": "",
+            "content": "<p>We take pride in providing our contractors a comprehensive and reliable supply chain of the materials required to keep their jobs running on time and on budget</p>"
+          }
+        },
+        "offer_MXTpCq": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/fds_rebar.jpg",
+            "blk_links": "shopify://pages/locations",
+            "title": "",
+            "content": "<p>Factory Direct Supply is a leading distributor of building materials serving all of South Florida and the Treasure Coast. </p><p>Call us today for all your project needs!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "offer_FFE4pY",
+        "offer_ArG8TX",
+        "offer_xmCEzc",
+        "offer_TpPy9R",
+        "offer_yYTf7Q",
+        "offer_MXTpCq"
+      ],
+      "settings": {
+        "items_per_row": 4,
+        "stack_mobile": true
+      }
+    },
+    "free_shipping_easy_return_FDCPkh": {
+      "type": "free-shipping-easy-return",
+      "blocks": {
+        "item_jHcEXd": {
+          "type": "item",
+          "settings": {
+            "icon": "bi-add-to-cart",
+            "title": "Financing Available",
+            "content": "<p>Short content about your store</p>",
+            "iconurl": "/"
+          }
+        },
+        "item_Vd8EgN": {
+          "type": "item",
+          "settings": {
+            "icon": "bi-returns",
+            "title": "Satisfied or refunded",
+            "content": "<p>Short content about your store</p>",
+            "iconurl": "/"
+          }
+        },
+        "item_cCpUDR": {
+          "type": "item",
+          "settings": {
+            "icon": "bi-customer-support",
+            "title": "Top-notch support",
+            "content": "<p>Short content about your store</p>",
+            "iconurl": "/"
+          }
+        },
+        "item_y7bR6K": {
+          "type": "item",
+          "settings": {
+            "icon": "bi-secure-payment",
+            "title": "Secure payments",
+            "content": "<p>Short content about your store</p>",
+            "iconurl": "/"
+          }
+        }
+      },
+      "block_order": [
+        "item_jHcEXd",
+        "item_Vd8EgN",
+        "item_cCpUDR",
+        "item_y7bR6K"
+      ],
+      "settings": {
+        "heading": "Free Shipping & Easy Returns",
+        "description": "Products are shipped to your home by our Delivery Team",
+        "button1_text": "Free Shipping",
+        "button1_link": "/",
+        "button2_text": "Easy Returns & Exchanges",
+        "button2_link": "/",
+        "stack_mobile": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter",
+    "about_kccGNB",
+    "image_with_text_pz9bcA",
+    "image_with_text_QXGi3t",
+    "page_cold_formed_steel_connectors_wVLGAw",
+    "free_shipping_easy_return_FDCPkh"
+  ]
+}
