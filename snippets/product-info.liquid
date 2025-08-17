@@ -1,0 +1,213 @@
+{%- assign selected_variant = product.selected_or_first_available_variant -%}
+{%- assign product_form_id = 'product_form_' | append: section.id | append: product.id -%}
+
+<div class="card {% if product.media.size > 0 %}card--collapsed{% endif %} {% if template.name == 'product' %}card--sticky{% endif %}">
+  {%- if section.settings.enable_image_zoom -%}
+    <div id="product-zoom-{{ section.id }}" class="product__zoom-wrapper"></div>
+  {%- endif -%}
+
+  <div class="card__section mobile_card__section">
+    {%- form 'product', product, id: product_form_id, class: 'product-form' -%}
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'product_meta' -%}
+            {%- assign ratingvisible = true -%}
+            {%- render 'product-meta', product: product, block: block, ratingvisible: ratingvisible -%}
+          <div class="product_meta_info">
+          {%- when 'variant_selector' -%}
+            {%- render 'product-variant-selector', product: product, form: form, block: block -%}
+
+          {%- when 'buy_buttons' -%}
+            {%- render 'product-buy-buttons', product: product, form: form, block: block -%}      
+
+              {%- when 'text' -%}
+                {%- if block.settings.content != blank -%}
+                  <div class="product-meta__text rte">
+                    {{- block.settings.content -}}
+                  </div>
+                {%- endif -%}
+
+          {%- when 'button' -%}
+            {%- if block.settings.text != blank -%}
+              <a
+                href="{{ block.settings.link }}"
+                class="product-meta__button button button--primary"
+                {{ block.shopify_attributes }}
+              >
+                {{- block.settings.text | escape -}}
+              </a>
+            {%- endif -%}
+
+          {%- when 'store_pickup' -%}
+            {%- comment -%}The availability container will be added automatically if there is store pickup available{%- endcomment -%}
+            <div class="product-meta__store-availability-container" {{ block.shopify_attributes }}>
+              {%- render 'store-availability', product_variant: product.selected_or_first_available_variant -%}
+            </div>
+
+          {%- when 'featured_description' -%}
+            {%- comment -%}This is only shown on the featured product section{%- endcomment -%}
+            {%- if product.description != blank -%}
+              <div class="product-meta__description rte" {{ block.shopify_attributes }}>
+                {{ product.description | remove: 'data-section-type="product"' }}
+              </div>
+            {%- endif -%}
+
+          {%- when '@app' -%}
+            {%- render block -%}
+        {%- endcase -%}
+      {%- endfor -%}
+      <div class="text-with-icons text-with-icons--stacked product-info-icon-text">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'icon_text' -%}
+              <div class="text-with-icons__item" data-block-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+                <a href="{{ block.settings.iconurl }}">
+                  <div class="text-with-icons__icon-wrapper">
+                    {%- if block.settings.custom_icon != blank -%}
+                      <img
+                        loading="lazy"
+                        src="{{ block.settings.custom_icon | img_url: '60x' }}"
+                        alt="{{ block.settings.custom_icon.alt | escape }}"
+                      >
+                    {%- else -%}
+                      {%- render 'icon', icon: block.settings.icon, stroke_width: 1.5 -%}
+                    {%- endif -%}
+                  </div>
+
+                  {%- if block.settings.title != blank or block.settings.content != blank -%}
+                    <div class="text-with-icons__content-wrapper">
+                      {%- if block.settings.title != blank -%}
+                        <p class="text-with-icons__title text--strong">{{ block.settings.title | escape }}</p>
+                      {%- endif -%}
+
+                      {%- if block.settings.content != blank -%}
+                        <div class="text-with-icons__content rte">
+                          {{ block.settings.content }}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+                </a>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- endform -%}
+  </div>
+</div>
+  {% comment %}
+    ------------------------------------------------------------------------------
+    Product Data. This must be outputted for all products (including home page).
+
+    IMPORTANT: THIS CODE IS VITAL. DO NOT EDIT IT NOR REMOVE IT. MAKE SURE TO KEEP
+    THE EXACT SAME ATTRIBUTES.
+    ------------------------------------------------------------------------------
+  {% endcomment %}
+
+  {%- assign variant_selector_block = section.blocks | where: 'type', 'variant_selector' | first -%}
+
+  <script type="application/json" data-product-json>
+    {
+      "product": {{ product | json }},
+      "template": {{ product.template_suffix | json }},
+      "options_with_values": {{ product.options_with_values | json }},
+      "selected_variant_id": {{ selected_variant.id }}
+      {%- if variant_selector_block.settings.show_inventory_quantity -%}
+        ,"inventories": {
+          {%- for variant in product.variants -%}
+            {%- if variant.inventory_management -%}
+              {%- if variant.available and variant.inventory_management -%}
+                {%- if variant.inventory_quantity <= 0 and variant.requires_shipping -%}
+                  {%- if variant.incoming -%}
+                    {%- capture next_incoming_date -%}{{ variant.next_incoming_date | date: format: 'date' }}{%- endcapture -%}
+                    {%- capture inventory_message -%}{{ 'product.form.incoming_stock' | t: next_incoming_date: next_incoming_date }}{%- endcapture -%}
+                  {%- else -%}
+                    {%- capture inventory_message -%}{{ 'product.form.oversell_stock' | t }}{%- endcapture -%}
+                  {%- endif -%}
+                {%- elsif variant_selector_block.settings.low_inventory_threshold > 0 -%}
+                  {%- if variant.inventory_quantity <= variant_selector_block.settings.low_inventory_threshold -%}
+                    {%- capture inventory_message -%}{{ 'product.form.low_stock_with_quantity_count' | t: count: variant.inventory_quantity }}{%- endcapture -%}
+                  {%- else -%}
+                    {%- capture inventory_message -%}{{ 'product.form.in_stock_with_quantity_count' | t: count: variant.inventory_quantity }}{%- endcapture -%}
+                  {%- endif -%}
+                {%- else -%}
+                  {%- capture inventory_message -%}{{ 'product.form.in_stock' | t }}{%- endcapture -%}
+                {%- endif -%}
+              {%- else -%}
+                {%- if variant.incoming -%}
+                  {%- capture next_incoming_date -%}{{ variant.next_incoming_date | date: format: 'date' }}{%- endcapture -%}
+                  {%- capture inventory_message -%}{{ 'product.form.incoming_stock' | t: next_incoming_date: next_incoming_date }}{%- endcapture -%}
+                {%- else -%}
+                  {%- capture inventory_message -%}{{ 'product.form.sold_out' | t }}{%- endcapture -%}
+                {%- endif -%}
+              {%- endif -%}
+            {%- else -%}
+              {%- capture inventory_message -%}{{ 'product.form.in_stock' | t }}{%- endcapture -%}
+            {%- endif -%}
+
+            "{{ variant.id }}": {
+              "inventory_management": {{ variant.inventory_management | json }},
+              "inventory_policy": {{ variant.inventory_policy | json }},
+              "inventory_quantity": {{ variant.inventory_quantity | json }},
+              "inventory_message": {{ inventory_message | json }}
+            }{% unless forloop.last %},{% endunless %}
+          {%- endfor -%}
+        }
+      {%- endif -%}
+    }
+  </script>
+  {%- comment -%}
+    --------------------------------------------------------------------------------------
+    Product Features
+    --------------------------------------------------------------------------------------
+  {%- endcomment -%}
+  
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'product_mail_print' -%}          
+        <div class="card__section card__section--tight product_mail_print custom-hidden">
+          <div class="button-group">
+          {% if block.settings.mail %}
+            {% if customer %}
+              <a class="button button--small button--transparent notarget" href="mailto:{{ customer.email }}?subject={{ product.title | url_encode }}&body=Product Name: {{ product.title | url_encode }}%0AProduct Link: {{ product.url | shopify_asset_url | url_encode }}" target="_self">
+                {%- render 'icon', icon: block.settings.mailicon, stroke_width: 1.5 -%} Mail it
+              </a>
+            {% else %}
+              <a class="button button--small button--transparent notarget" href="mailto:?subject={{ product.title | url_encode }}&body=Product Name: {{ product.title | url_encode }}%0AProduct Link: {{ product.url | shopify_asset_url | url_encode }}" target="_self">
+                {%- render 'icon', icon: block.settings.mailicon, stroke_width: 1.5 -%} Mail it
+            {% endif %}
+          {% endif %}
+          {% if block.settings.print %}
+            <a class="button button--small button--transparent notarget" href="javascript:void(0)" onclick="window.print()" target="_self">{%- render 'icon', icon: block.settings.printicon, stroke_width: 1.5 -%} Print it</a>
+          {% endif %}
+          {% if block.settings.specifications %}
+            {%- if product.metafields.my_fields.arctic_grey_file_metafield != blank
+              or product.metafields.my_fields.specifications_sheet != blank
+            -%}
+            {% if product.metafields.my_fields.arctic_grey_file_metafield != blank %}
+              {% assign fileurl = product.metafields.my_fields.arctic_grey_file_metafield %}
+            {% else if product.metafields.my_fields.specifications_sheet != blank %}
+              {% assign fileurl = product.metafields.my_fields.specifications_sheet %}
+            {% endif %}
+            <a class="button button--small button--transparent" href="{{ fileurl | file_url }}" target="_blank">{%- render 'icon', icon: block.settings.specificationsicon, stroke_width: 1.5 -%} Technical Specifications</a>
+          {% endif %}
+          {% endif %}
+        </div>
+        <div class="badges">
+          {% if block.settings.badge != blank %}
+            <img src="{{ block.settings.badge | remove: "files/" | file_url }}" alt="Badges">
+          {% else %}
+            <img src="{{ 'files/abc_badges.png' | remove: "files/" | file_url }}" alt="Badges">
+          {% endif %}
+        </div>
+        </div>
+    {% endcase %}
+  {% endfor %}
+
+  {%- if product.metafields.my_fields.product_features != blank -%}
+    <div class="product-features card__section">
+      <h2>Product Features</h2>
+      {{ product.metafields.my_fields.product_features | metafield_tag }}
+    </div>
+  {%- endif -%}
+</div>

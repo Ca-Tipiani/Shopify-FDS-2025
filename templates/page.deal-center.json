@@ -1,0 +1,103 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "title": "Newsletter",
+        "content": "<p>A short sentence describing what someone will receive by subscribing</p>",
+        "background": "#1e2d7d",
+        "text": "#ffffff"
+      }
+    },
+    "92fcb5bd-82fe-4c77-ba46-065f1b5c397e": {
+      "type": "page-cold-formed-steel-connectors",
+      "blocks": {
+        "template--16793890848998__92fcb5bd-82fe-4c77-ba46-065f1b5c397e-offer-1": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/CLEARANCE.jpg",
+            "blk_links": "shopify://collections/clearance",
+            "title": "Clearance While Supplies Last",
+            "content": ""
+          }
+        },
+        "template--16793890848998__92fcb5bd-82fe-4c77-ba46-065f1b5c397e-offer-2": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/DEWALT_5_efb777f3-5775-48d9-aa27-b6521910e1ce.jpg",
+            "blk_links": "shopify://collections/dewalt-promotions",
+            "title": "DeWALT Specials",
+            "content": ""
+          }
+        },
+        "e9ef84eb-67e5-4695-9bc4-12ff60a01b8b": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/Simpson_discounts_cb06b548-e990-420d-ab4a-770955dcb951.jpg",
+            "blk_links": "shopify://collections/simpson-buy-200-get-10-off",
+            "title": "Simpson Strong-Tie Deals & Coupons",
+            "content": ""
+          }
+        },
+        "199a71ed-8f60-4d0f-b413-621250e41b20": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/Diablo_saw_blades_sale_9bf95381-fb55-4c66-a1f4-f744c79a842f.jpg",
+            "blk_links": "shopify://collections/diablo-promotions",
+            "title": "Diablo Buy More Save More",
+            "content": ""
+          }
+        },
+        "af87ea61-82cb-4b3e-861d-12526d15fca0": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/Metabo--Summer-SalE_8a638f79-4cad-4f71-bb74-b5a840af50fb.jpg",
+            "blk_links": "shopify://collections/metabo-promotions",
+            "title": "Metabo Limited time Sale",
+            "content": ""
+          }
+        },
+        "9fb26599-be7d-4b50-b8e3-385c08b15133": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/CMT_COUPONS_0be0524e-1d57-474c-b5d5-db50edff8535.jpg",
+            "blk_links": "shopify://collections/cmt-saw-blades",
+            "title": "Save on CMT Orange Tools",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16793890848998__92fcb5bd-82fe-4c77-ba46-065f1b5c397e-offer-1",
+        "template--16793890848998__92fcb5bd-82fe-4c77-ba46-065f1b5c397e-offer-2",
+        "e9ef84eb-67e5-4695-9bc4-12ff60a01b8b",
+        "199a71ed-8f60-4d0f-b413-621250e41b20",
+        "af87ea61-82cb-4b3e-861d-12526d15fca0",
+        "9fb26599-be7d-4b50-b8e3-385c08b15133"
+      ],
+      "settings": {
+        "items_per_row": 3,
+        "stack_mobile": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter",
+    "92fcb5bd-82fe-4c77-ba46-065f1b5c397e"
+  ]
+}

@@ -1,0 +1,41 @@
+<section data-section-id="{{ section.id }}" data-section-type="page">
+   <div class="container container--flush">
+    <div class="page__sub-header">
+      <nav aria-label="{{ 'general.breadcrumb.title' | t }}" class="breadcrumb">
+        <ol class="breadcrumb__list" role="list">
+          <li class="breadcrumb__item">
+            <a class="breadcrumb__link link" href="{{ routes.root_url }}">{{ 'general.breadcrumb.home' | t }}</a> {%- render 'icon', icon: 'arrow-right' -%}
+          </li>
+          <li class="breadcrumb__item">
+            <a class="breadcrumb__link link" href="{{ page.url }}" aria-current="page">
+                {{- page.title -}}
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="container container--narrow">
+    <header class="page__header page__header--centered page__header--stack">
+      <h1 class="page__title heading h1">{{ page.title }}</h1>
+
+      {%- if page.content != blank and page.template_suffix == 'contact' or page.template_suffix == 'team' -%}
+        <div class="page__description rte">
+          {{ page.content }}
+        </div>
+      {%- endif -%}
+    </header>
+
+    {%- if page.content != blank and page.template_suffix != 'contact' and page.template_suffix != 'team' -%}
+      <div class="page__content rte">
+        {{ page.content }}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page"
+}
+{% endschema %}

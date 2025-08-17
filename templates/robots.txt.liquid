@@ -1,0 +1,31 @@
+{% for group in robots.default_groups %}
+  {{- group.user_agent }}
+
+  {%- for rule in group.rules -%}
+    {{ rule }}
+  {%- endfor -%}
+
+  {%- if group.user_agent.value == '*' -%}
+    {{ 'Disallow: */web-pixel-shopify-custom-pixel@*' }}
+  {%- endif -%}
+
+  {%- if group.user_agent.value == '*' -%}
+    {{ 'Disallow: /services/login_with_shop/authorize?target_origin=*' }}
+  {%- endif -%}
+
+  {%- if group.user_agent.value == '*' -%}
+    {{ 'Disallow: *.atom' }}
+  {%- endif -%}
+
+  {%- if group.user_agent.value == '*' -%}
+    {{ 'Disallow: *?pr_prod_strat=*' }}
+  {%- endif -%}
+
+  {%- if group.user_agent.value == '*' -%}
+    {{ 'Disallow: **?page=#' }}
+  {%- endif -%}
+
+  {%- if group.sitemap != blank -%}
+      {{ group.sitemap }}
+  {%- endif -%}
+{% endfor %}

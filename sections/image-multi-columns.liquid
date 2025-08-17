@@ -1,0 +1,198 @@
+<div class="multi-columns-section">
+  <div class="container">
+    <div class="multi-columns-row" style="--columns-per-row: {{ section.settings.columns_per_row | default: 3 }}">
+      {% for block in section.blocks %}
+        <div
+          class="multi-column"
+          style="
+            {% if block.settings.background_image %}
+              background-image: url('{{ block.settings.background_image | remove: "files/" | file_url }}');
+            {% endif %}
+            min-height: {{ section.settings.column_min_height | default: '47' | times: 8 }}px;
+            padding: {{ section.settings.column_padding | default: '20' }}px;
+          "
+        >
+          <!-- Gradient Overlay with Block-Specific Colors and Direction -->
+          <div
+            class="overlay"
+            style="
+              background: linear-gradient({{ block.settings.overlay_gradient_direction | default: 'to bottom' }},
+                    {{ block.settings.overlay_color_1 | default: '#000000' }},
+                    {{ block.settings.overlay_color_2 | default: '#000000' }});
+              opacity: {{ block.settings.overlay_opacity | default: 50 | divided_by: 100 }};
+            "
+          ></div>
+
+          <div class="content" style="color: {{ block.settings.text_color | default: '#ffffff' }};">
+            {% if block.settings.heading %}
+              <h2>{{ block.settings.heading }}</h2>
+            {% endif %}
+            {% if block.settings.description %}
+              <p>{{ block.settings.description }}</p>
+            {% endif %}
+            {% if block.settings.button_link and block.settings.button_text %}
+              <a
+                href="{{ block.settings.button_link }}"
+                class="btn"
+                style="
+                  background-color: {{ block.settings.button_bg_color | default: '#D90000' }};
+                  color: {{ block.settings.button_text_color | default: '#ffffff' }};
+                "
+              >
+                {{ block.settings.button_text }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<style>
+  .multi-columns-row {
+    display: grid;
+    grid-template-columns: repeat(var(--columns-per-row, 3), 1fr);
+    gap: 0;
+  }
+
+  .multi-column {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+  }
+  .content h2 {
+    font-size: 33px;
+    margin-bottom: 0;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .content p {
+    font-size: 18px;
+  }
+  .content a.btn {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 2px;
+    width: 100%;
+    display: inline-block;
+    line-height: 1.5;
+    text-align: center;
+  }
+  @media (max-width: 1024px) {
+    .multi-columns-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .multi-columns-row {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .multi-columns-row {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .multi-column {
+      padding: 10px;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "Image Multi Columns",
+  "settings": [
+    {
+      "type": "range",
+      "id": "columns_per_row",
+      "label": "Columns per row",
+      "min": 1,
+      "max": 6,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "column_min_height",
+      "label": "Minimum Column Height",
+      "min": 1,
+      "max": 100,
+      "default": 35
+    },
+    {
+      "type": "range",
+      "id": "column_padding",
+      "label": "Column Padding",
+      "min": 0,
+      "max": 50,
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        { "type": "image_picker", "id": "background_image", "label": "Background Image" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Your Heading" },
+        { "type": "textarea", "id": "description", "label": "Description", "default": "Your description here" },
+        { "type": "url", "id": "button_link", "label": "Button Link" },
+        { "type": "text", "id": "button_text", "label": "Button Text", "default": "Click Here" },
+        { "type": "color", "id": "overlay_color_1", "label": "Overlay Gradient First Color", "default": "#000000" },
+        { "type": "color", "id": "overlay_color_2", "label": "Overlay Gradient Second Color", "default": "#000000" },
+        {
+          "type": "select",
+          "id": "overlay_gradient_direction",
+          "label": "Overlay Gradient Direction",
+          "options": [
+            { "value": "to top", "label": "Top to Bottom" },
+            { "value": "to bottom", "label": "Bottom to Top" },
+            { "value": "to right", "label": "Left to Right" },
+            { "value": "to left", "label": "Right to Left" }
+          ],
+          "default": "to bottom"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "Overlay Opacity",
+          "min": 0,
+          "max": 100,
+          "default": 50
+        },
+        { "type": "color", "id": "text_color", "label": "Text Color", "default": "#ffffff" },
+        { "type": "color", "id": "button_bg_color", "label": "Button Background Color", "default": "#D90000" },
+        { "type": "color", "id": "button_text_color", "label": "Button Text Color", "default": "#ffffff" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

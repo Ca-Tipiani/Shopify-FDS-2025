@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "title": "Newsletter",
+        "content": "<p>A short sentence describing what someone will receive by subscribing</p>",
+        "background": "#1e2d7d",
+        "text": "#ffffff"
+      }
+    },
+    "0e06dd83-26da-43e7-a206-8b4c5f0e0fe4": {
+      "type": "custom-inner-banner",
+      "settings": {
+        "page": "learning-center",
+        "page_content": "<p>Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit Voluptatem Accusantium Doloremque Laudantium, Totam Rem Aperiam, Eaque Ipsa Quae Ab Illo Inventore Veritatis Et Quasi Architecto Beatae Vitae Dicta Sunt Explicabo.</p>"
+      }
+    },
+    "f4420402-fe76-4d81-9628-8064041f4fac": {
+      "type": "custom-product-brief-block",
+      "blocks": {
+        "26cb1558-30a5-4cd3-b6c2-9f6b206c4bf7": {
+          "type": "product_brief",
+          "settings": {
+            "main_image": "shopify://shop_images/product-care.jpg",
+            "position": "right",
+            "title": "Product Care And Safety",
+            "description": "<p>Ensuring the proper care and safety of your products is essential to their longevity and effectiveness. Our Product Care and Safety resources provide valuable information on how to properly maintain and use your products, as well as tips on how to prevent accidents and injuries. In addition, our Product Care and Safety resources also provide information on the proper storage and handling of products, as well as ways to reduce the risk of damage or deterioration.</p>\n<p>We also cover topics such as proper ventilation and air filtration to minimize exposure to dust and other harmful particles. With our comprehensive guides, you can ensure that your products are well-maintained and safe to use, helping you to save time, money, and potential injuries in the long run. So, take advantage of our Product Care and Safety resources today and protect both yourself and your products. Whether you're working with power tools, machinery, or other construction materials, our guides offer step-by-step instructions and best practices to help you work safely and efficiently.</p>",
+            "button_link": "#",
+            "button_text": "Learn More"
+          }
+        },
+        "99e01503-6445-4574-9564-44f5472d995c": {
+          "type": "product_brief",
+          "settings": {
+            "main_image": "shopify://shop_images/power-tools.jpg",
+            "position": "left",
+            "title": "Power Tools Buying Guides",
+            "description": "<p>Selecting the right power tool for the job can be a daunting task. With so many options available, it can be difficult to know which one is right for you. Our Power Tools Buying Guides provide in-depth information on the different types of power tools available, their features and benefits, and how to choose the right one for your project.</p> <p>Whether you're looking for a cordless drill or a circular saw, our buying guides provide unbiased and detailed information to help you make an informed decision. We also cover important factors such as power source, ergonomics, and safety features to ensure that you select a power tool that is both effective and safe to use.</p><p>With our Power Tools Buying Guides, you can confidently choose the right power tool for your needs and get the job done efficiently and effectively. So, explore our selection of buying guides today and take the first step towards completing your project with confidence.</p><p>Visit Factory Direct Supply today to access our Learning Center resources and take advantage of our wide range of products and services. Our knowledgeable staff is always available to assist you with any questions or concerns you may have. With Factory Direct Supply, you can be confident that you're getting the best products, prices, and services in the industry.</p>",
+            "button_link": "#",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "26cb1558-30a5-4cd3-b6c2-9f6b206c4bf7",
+        "99e01503-6445-4574-9564-44f5472d995c"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "newsletter",
+    "0e06dd83-26da-43e7-a206-8b4c5f0e0fe4",
+    "f4420402-fe76-4d81-9628-8064041f4fac"
+  ]
+}

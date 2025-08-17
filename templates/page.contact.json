@@ -1,0 +1,39 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "custom_css": [
+        "{text-align: center; margin-top: 1px;}",
+        "p {line-height: 0.9;}",
+        ".contact__store-image {margin-bottom: 0px;}",
+        "h1 {margin-bottom: 8px;}"
+      ],
+      "settings": {
+        "form_heading": "Contact Us",
+        "form_content": "",
+        "show_store_info": true,
+        "store_heading": "",
+        "store_image": "{{ shop.brand.logo }}",
+        "store_info": "<h1>We provide Solutions  </h1><p>Do you have any questions or Can't find what you're looking for? </p><p>Call Us :<a href=\"tel:18887988822\" target=\"_blank\">888-798-8822</a></p><p>Email us:  <a href=\"mailto:Info@factorydirectsupplyonline.com\" target=\"_blank\">Info@factorydirectsupplyonline.com</a></p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "contact-form"
+  ]
+}

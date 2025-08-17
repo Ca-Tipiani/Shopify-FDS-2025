@@ -1,0 +1,94 @@
+<!-- Shopper Approved Product Page Widget - sections/shopper-review.liquid -->
+<section>
+  <div class="container">
+    <header class="section__header">
+        <h2 class="section__title heading h3">{{ section.settings.heading }}</h2>
+    </header>
+    <div id="SA_review_wrapper"></div><script type="text/javascript">var sa_product = 'Shopify_US_{{ product.id }}'; var sa_interval = 5000;function saLoadScript(src) { var js = window.document.createElement('script'); js.src = src; js.type = 'text/javascript'; document.getElementsByTagName("head")[0].appendChild(js); } if (typeof(shopper_first) == 'undefined') saLoadScript('//www.shopperapproved.com/widgets/34394/product/'+sa_product+'/product-widget/686Rj45kD3tG.js'); </script>
+	<style>
+      #product_just_stars .SA__review_widget_item .SA__total_reviews a {
+        font-size: 12px;
+        vertical-align: 3px;
+        text-decoration: underline;
+        color: #000;
+      }
+      #SA_review_wrapper {
+        background-color: #ffffff;
+      }
+      #SA_review_wrapper .SA__review_widget .SA__review_widget_item .SA__review_content .SA__review_num_ratings span {
+        vertical-align: -1px;
+      }
+      #SA_review_wrapper .SA__review_widget .SA__review_widget_item .SA__review_content .SA__review_num_ratings span:last-child {
+        vertical-align: -1px;
+      }
+    </style>
+    <!-- <script type="text/javascript"> var sa_products_count = 3; var sa_date_format = 'F j, Y'; var sa_product = '{{ product.id }}'; (function(w,d,t,f,o,s,a){ o = 'shopperapproved'; if (!w[o]) { w[o] = function() { (w[o].arg = w[o].arg || []).push(arguments) }; s=d.createElement(t), a=d.getElementsByTagName(t)[0];s.async=1;s.src=f;a.parentNode.insertBefore(s,a)} })(window,document,'script',"//www.shopperapproved.com/product/34394/"+sa_product+".js"); </script> <div id="shopper_review_page"><div id="review_header"></div><div id="product_page"></div><div id="review_image"><a href="https://www.shopperapproved.com/reviews/factorydirectsupplyonline.com/" onclick="var nonwin=navigator.appName!='Microsoft Internet Explorer'?'yes':'no'; var certheight=screen.availHeight-90; window.open(this.href,'shopperapproved','location='+nonwin+',scrollbars=yes,width=620,height='+certheight+',menubar=no,toolbar=no'); return false;" target="_blank" rel="nofollow"></a></div></div> -->
+    <!-- <style>
+      #shopper_review_page {
+      	border-radius: 3px;
+        border: 1px solid #e1e3e4;
+        background: #fff;
+        padding: 30px 10px;
+      }
+      
+      #product_page div {
+        line-height: 2 !important;
+      }
+
+      #product_page #sa_sort {
+          margin-left: 10px;
+      }   
+
+      #review_header .overall { 
+          vertical-align: 9px; 
+      }
+
+      #review_header .graph {
+          vertical-align: baseline;
+      }
+
+      #review_header .percentage {
+          width: 185px;
+      }
+
+      @media screen and (max-width: 960px) {
+          #review_header {
+              text-align: center;
+          }
+          #review_image .sa_logo {
+              margin-top: 45px !important;
+              float: unset;
+              margin-left: 10px;
+          }
+      }
+    </style> -->
+  </div>
+</section>
+<!-- END Shopper Approved Product Page Widget - sections/shopper-review.liquid -->
+
+{% schema %}
+  {
+    "name": "Shopper Review",
+    "settings": [
+      {
+        "type":"text",
+        "id":"heading",
+        "label":"Title",
+        "default":"Reviews"
+      }
+    ],
+    "presets": [
+    {
+      "category": "Reviews",
+      "name": "Shopper Reviews",
+      "settings": {}
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

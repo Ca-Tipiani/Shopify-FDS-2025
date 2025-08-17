@@ -1,0 +1,77 @@
+<section id="about" class="about-section">
+  <div class="section-container">
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+    <div class="about-content">
+      <!-- Left Column: Image -->
+      <div class="about-image">
+        <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image_alt }}">
+      </div>
+
+      <!-- Right Column: Text Content -->
+      <div class="about-text">
+        <div class="about-text-inner">
+          <h3 class="about-subtitle">{{ section.settings.subtitle }}</h3>
+          {{ section.settings.description | raw }}
+          <a href="{{ section.settings.button_link }}" class="about-button">{{ section.settings.button_text }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ 'about.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "About",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "About Factory Direct Supply"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "We Supply Solutions"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Factory Direct Supply offers a <strong>vast diversity of products</strong> and extensive experience in structural steel fabrication which makes us the go-to source for construction supplies and expert structural steel fabrication projects.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text",
+      "default": "Factory Direct Supply"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More About Us"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

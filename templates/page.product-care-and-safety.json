@@ -1,0 +1,40 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "title": "Newsletter",
+        "content": "<p>A short sentence describing what someone will receive by subscribing</p>",
+        "background": "#1e2d7d",
+        "text": "#ffffff"
+      }
+    },
+    "c1aaf1d6-f60b-4426-a23a-749d62bfb1a7": {
+      "type": "custom-inner-banner",
+      "settings": {
+        "page": "product-care-and-safety",
+        "page_content": "<p>\n      It is a long established fact that a reader will be distracted by the readable content of a page when looking at\n      its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as\n      opposed to using 'Content here, content here', making it look like readable English.\n    </p>\n    <div class=\"circle-list\">\n      <ul>\n        <li>ALWAYS wear eye and face protection when sharpening and using your tools.</li>\n        <li>\n          Utilize all of the safety equipment that came with your equipment, particular safety shields on your grinder.\n        </li>\n        <li>\n          Understand How To Use Your Tools Properly. This May Require The Assistance Of A Teacher. Local Woodturning\n          Clubs Are A Great Source Of Education.\n        </li>\n        <li>\n          Never Sharpen Your Tools Around Flammable Materials And / Or Wood Shavings. Sparks From The Grinder Could\n          Ignite Flammable Materials.\n        </li>\n        <li>Wear Proper Protection When Handling Chemicals Such As CA Glue, Solvents, Oils And Paint.</li>\n      </ul>\n    </div>\n    <!-- /.circle-list -->"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter",
+    "c1aaf1d6-f60b-4426-a23a-749d62bfb1a7"
+  ]
+}

@@ -1,0 +1,91 @@
+<section
+  id="newsletter_home"
+  class="newsletter-home"
+  style="background-image: url({{ section.settings.background_image | img_url: 'master' }});"
+>
+  <div class="section-container">
+    <div class="newsletter-content">
+      <div class="vertical-border-left"></div>
+      <div class="vertical-border-right"></div>
+      <div class="newsletter-text">
+        <div class="text-wrapper">
+          <h2 class="newsletter-title">{{ section.settings.title }}</h2>
+          <p class="newsletter-description">{{ section.settings.description }}</p>
+        </div>
+      </div>
+      <div class="newsletter-form">
+        {%- form 'customer', id: 'footer-newsletter', class: 'footer__newsletter-form' -%}
+          {%- if form.posted_successfully? -%}
+            <p class="alert alert--success alert--center">{{ 'footer.newsletter.success' | t }}</p>
+          {%- else -%}
+            {%- if form.errors -%}
+              <p class="alert alert--error alert--center">{{ form.errors.messages.email }}</p>
+            {%- endif -%}
+
+            <input type="hidden" name="contact[tags]" value="newsletter">
+
+            <div class="form__input-wrapper form__input-wrapper--labelled">
+              <input
+                type="email"
+                id="footer[{{ section.id }}][contact][email]"
+                name="contact[email]"
+                class="form__field form__field--text"
+                required=""
+              >
+              <label for="footer[{{ section.id }}][contact][email]" class="form__floating-label">
+                {{- 'footer.newsletter.input' | t -}}
+              </label>
+            </div>
+
+            <button type="submit" class="form__submit form__submit--tight button button--primary">
+              {{ 'footer.newsletter.submit' | t }}
+            </button>
+          {%- endif -%}
+        {%- endform -%}
+        <div class="vertical-border"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ 'newsletter-home.css' | asset_url | stylesheet_tag }}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const submitButton = document.querySelector('.footer__newsletter-form .form__submit');
+    if (submitButton) {
+      submitButton.textContent = 'Send Me Updates';
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Newsletter Home",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Never Miss an Update"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Keep your toolbox stocked - sharpen your skills with our updates and deals."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter Home",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

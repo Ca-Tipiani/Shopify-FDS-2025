@@ -1,0 +1,67 @@
+<section id="popular_brands" class="popular-brands">
+  <div class="section-container">
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+    <div class="brands-grid">
+      {% for block in section.blocks %}
+        <a href="{{ block.settings.collection_url }}" class="brand-item">
+          <img src="{{ block.settings.brand_image | img_url: 'master' }}" alt="Brand Logo">
+        </a>
+      {% endfor %}
+    </div>
+    <div class="shop-all-container">
+      <a href="{{ section.settings.button_link }}" class="shop-all-button">{{ section.settings.button_text }}</a>
+    </div>
+  </div>
+</section>
+
+{{ 'popular-brands.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Popular Brands",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Popular Brands"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop All Brands"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "brand",
+      "name": "Brand",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "brand_image",
+          "label": "Brand Logo"
+        },
+        {
+          "type": "url",
+          "id": "collection_url",
+          "label": "Brand Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Popular Brands",
+      "category": "Custom"
+    }
+  ],
+  "max_blocks": 8
+}
+{% endschema %}

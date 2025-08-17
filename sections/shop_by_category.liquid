@@ -1,0 +1,92 @@
+<section id="shop_by_category" class="shop-by-category">
+  <div class="section-container">
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+    <div class="category-grid">
+      {% for block in section.blocks %}
+        <div class="category-item">
+          <a href="{{ block.settings.collection_url }}" class="category-link">
+            <div class="category-image">
+              <img
+                src="{{ block.settings.category_image | img_url: 'master' }}"
+                alt="{{ block.settings.category_title }}"
+              >
+            </div>
+            <div class="category-content">
+              <p class="category-title">{{ block.settings.category_title }}</p>
+              <span class="category-arrow">{% render 'arrow-right.svg' %}</span>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    {% if section.settings.show_button %}
+      <div class="shop-all-container">
+        <a href="{{ section.settings.button_link }}" class="shop-all-button">{{ section.settings.button_text }}</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{{ 'shop-by-category.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Shop By Category",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Shop By Category"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show Button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop All Categories"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/collections/all"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "category_image",
+          "label": "Category Image"
+        },
+        {
+          "type": "text",
+          "id": "category_title",
+          "label": "Category Title"
+        },
+        {
+          "type": "url",
+          "id": "collection_url",
+          "label": "Category Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop By Category",
+      "category": "Custom"
+    }
+  ],
+  "max_blocks": 12
+}
+{% endschema %}

@@ -1,0 +1,94 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "separator-1": {
+          "type": "separator",
+          "settings": {
+            "title": "Shipping"
+          }
+        },
+        "question-1": {
+          "type": "question",
+          "settings": {
+            "title": "Do you ship to my country?",
+            "answer": "<p><strong>We Currently ship within the United States, Canada, & Mexico</strong></p>"
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+            "title": "Is shipping FREE?",
+            "answer": "<p><strong>Standard Shipping </strong>is free on orders over $25 within the contiguous US. </p><p>Note, exceptions may include  unique, or oversized products. These items will have shipping charges noted during the checkout process. Orders shipping to Hawaii, Alaska, Puerto Rico, Canada, & Mexico will be a $25 shipping charge plus $1.50 per pound.</p>"
+          }
+        },
+        "question-3": {
+          "type": "question",
+          "settings": {
+            "title": "When will my order ship and how long will it take for delivery?",
+            "answer": "<p>It's our goal to make sure your order is processed quickly and efficiently.</p><p>Generally, if you submit your order before noon Eastern Time on Monday-Friday, it will ship the same business day. Orders placed after noon Eastern Time on Friday or during the weekend will ship the next business day. Please review the product page for the product(s) you have ordered, which will indicate the inventory availability status of the product. Products that are out of stock will be shipped automatically once we receive additional inventory. Products that ship from the manufacturer will be submitted for processing within one business day.</p><p>Factory Direct Supply ships orders using UPS Ground or USPS, whichever provides the best delivery to you, unless expedited shipping is selected.</p>"
+          }
+        },
+        "question-4": {
+          "type": "question",
+          "settings": {
+            "title": "When will my order ship and how long will it take for delivery?",
+            "answer": "<p>It's our goal to make sure your order is processed quickly and efficiently.</p><p>Generally, if you submit your order before noon Eastern Time on Monday-Friday, it will ship the same business day. Orders placed after noon Eastern Time on Friday or during the weekend will ship the next business day. Please review the product page for the product(s) you have ordered, which will indicate the inventory availability status of the product. Products that are out of stock will be shipped automatically once we receive additional inventory. Products that ship from the manufacturer will be submitted for processing within one business day.</p><p>Factory Direct Supply ships orders using UPS Ground or USPS, whichever provides the best delivery to you, unless expedited shipping is selected.</p>"
+          }
+        },
+        "question-5": {
+          "type": "question",
+          "settings": {
+            "title": "What are my shipping charges?",
+            "answer": "<p>Standard Shipping is free on most orders over $25. Some exceptions apply.</p><p></p><p><br/></p><p><strong>PLEASE NOTE:</strong> We ship on business days. Most orders placed after 11am on Friday will ship the following business day, Monday.</p>"
+          }
+        },
+        "ae462e39-79f4-4146-ac9b-abe82e98b85d": {
+          "type": "question",
+          "settings": {
+            "title": "What should I do if my order is lost or missing?",
+            "answer": "<p>If your package was confirmed as delivered by the carrier (Tracking number) but you haven’t received it yet, here are some places to check:</p><p>With your neighbors — the carrier might have dropped off the package at a house or apartment unit nearby for security purposes.</p><p>Less visible areas surrounding your home or apartment to prevent theft.</p><p>For example, if you live in an apartment in NYC, check the lobby, if you live in a house in the suburbs, check your side yard or behind shrubbery .</p><p>Your door or mailbox for an “attempted package delivery notification” slip from the carrier.</p><p>For USPS, the notification slip on your door will let you know that your package is available for pick-up at your local USPS office.</p><p>For UPS, the notification slip will let you know that your package is available for pick-up at an affiliated business or Access Point.</p><p>To contact the carrier directly for more information, call the applicable number below:<br/>USPS  (800) 222-1811<br/>UPS  (800) 742-5877<br/>FedEx  (800) 463-3339<br/>DHL Express  (800) 225-5345</p><p>What if you’ve tried all of these options, and still can't locate your package?<br/>Please reach out to us. We will help you file a lost package Claim with the Carrier.</p><p>To do this, we will need the following documents: <br/>Copy of a photo ID (state-issued driver license, passport, or state ID)</p><p>Signed document of non-receipt (we will email you a form to fill out)</p><p>Forward these documents to us and we will help you file a claim with the carrier.</p><p>We ask that you contact us and submit these documents within 3 business days of the expected delivery date.</p><p>If the tracking information shows your order was never shipped<br/>or received you should contact us at <a href=\"mailto:info@FactoryDirectSupplyOnline.com\">info@FactoryDirectSupplyOnline.com</a><br/>We will either resend the package or offer you a full refund</p><p>FactoryDirectSupplyOnline.com does not refund or replace<br/>packages that are labeled as delivered.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "separator-1",
+        "question-1",
+        "question-2",
+        "question-3",
+        "question-4",
+        "question-5",
+        "ae462e39-79f4-4146-ac9b-abe82e98b85d"
+      ],
+      "settings": {
+        "show_contact_info": true,
+        "contact_info_heading": "Any question?",
+        "contact_info_text": "<p>If we still haven't answered your question, you can contact us below and we will get back to you as soon as possible.</p>",
+        "contact_1_icon": "bi-phone",
+        "contact_1_heading": "Customer support",
+        "contact_1_text": "<p>Enter your text here</p>",
+        "contact_2_icon": "bi-email",
+        "contact_2_heading": "Send a message",
+        "contact_2_text": "<p>Enter your text here</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq"
+  ]
+}

@@ -1,0 +1,270 @@
+<section
+  class="section section--isolated section--tight section-free-shipping-easy-return"
+  data-section-id="{{ section.id }}"
+  data-section-type="text-with-icons"
+>
+  <div class="container">
+    <div class="text-with-icons__two-column">
+      <!-- First Column -->
+      <div class="text-with-icons__first-column">
+        {% if section.settings.heading != blank %}
+          <h2 class="text-with-icons__heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <p class="text-with-icons__description">{{ section.settings.description }}</p>
+        {% endif %}
+        <div class="text-with-icons__buttons">
+          {% if section.settings.button1_text and section.settings.button1_link %}
+            <a href="{{ section.settings.button1_link }}" class="btn btn--primary">
+              {{ section.settings.button1_text }}
+            </a>
+          {% endif %}
+          {% if section.settings.button2_text and section.settings.button2_link %}
+            <a href="{{ section.settings.button2_link }}" class="btn btn--secondary">
+              {{ section.settings.button2_text }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Second Column -->
+      <div class="text-with-icons__second-column">
+        <div class="text-with-icons {% if section.settings.stack_mobile %}text-with-icons--stacked{% endif %}">
+          {%- for block in section.blocks -%}
+            <div class="text-with-icons__item" data-block-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+              <a href="{{ block.settings.iconurl }}">
+                <div class="text-with-icons__icon-wrapper">
+                  {%- if block.settings.custom_icon != blank -%}
+                    <img
+                      loading="lazy"
+                      src="{{ block.settings.custom_icon | img_url: '60x' }}"
+                      alt="{{ block.settings.custom_icon.alt | escape }}"
+                    >
+                  {%- else -%}
+                    {%- render 'icon', icon: block.settings.icon, stroke_width: 1.5 -%}
+                  {%- endif -%}
+                </div>
+                {%- if block.settings.title != blank or block.settings.content != blank -%}
+                  <div class="text-with-icons__content-wrapper">
+                    {%- if block.settings.title != blank -%}
+                      <p class="text-with-icons__title text--strong">{{ block.settings.title | escape }}</p>
+                    {%- endif -%}
+                    {%- if block.settings.content != blank -%}
+                      <div class="text-with-icons__content rte">
+                        {{ block.settings.content }}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </a>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-free-shipping-easy-return.section--isolated.section--tight {
+    padding: 0;
+  }
+  .section-free-shipping-easy-return .container .text-with-icons__two-column {
+    background: #ffffff;
+    padding: 20px 60px 40px 100px;
+    border: 1px solid #e1e3e4;
+    border-radius: 3px;
+  }
+  .text-with-icons__two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+    align-items: center;
+  }
+
+  .text-with-icons__first-column {
+    padding: 20px;
+  }
+
+  .text-with-icons__heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .text-with-icons__description {
+    margin-bottom: 1.5rem;
+  }
+
+  .text-with-icons__buttons .btn {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background: #ffffff;
+    border: 1px solid #d90000;
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #d90000;
+  }
+  .text-with-icons__buttons .btn--primary {
+    background-color: #ffffff;
+  }
+
+  .text-with-icons__buttons .btn--secondary {
+    background-color: #ffffff;
+  }
+  .text-with-icons__second-column .text-with-icons {
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  .text-with-icons__second-column .text-with-icons__item {
+    display: flex;
+    flex-basis: calc(50% - 25px);
+    margin: 0 10px 10px;
+  }
+  .text-with-icons__second-column .text-with-icons__item a {
+    display: flex;
+  }
+  @media (max-width: 768px) {
+    .text-with-icons__two-column {
+      grid-template-columns: 1fr;
+    }
+    .text-with-icons__first-column {
+      text-align: center;
+    }
+    .text-with-icons__buttons .btn {
+      margin: 5px 0;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Free Shipping Easy Return",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Free Shipping & Easy Returns"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Products are shipped to your home by our Delivery Team"
+    },
+    {
+      "type": "text",
+      "id": "button1_text",
+      "label": "Button 1 Text",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "url",
+      "id": "button1_link",
+      "label": "Button 1 Link",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "button2_text",
+      "label": "Button 2 Text",
+      "default": "Easy Returns & Exchanges"
+    },
+    {
+      "type": "url",
+      "id": "button2_link",
+      "label": "Button 2 Link",
+      "default": "/"
+    },
+    {
+      "type": "checkbox",
+      "id": "stack_mobile",
+      "label": "Stack on mobile",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "bi-add-to-cart", "label": "Add to cart", "group": "Shop" },
+            { "value": "bi-gift-wrap", "label": "Gift wrap", "group": "Shop" },
+            { "value": "bi-gift-box", "label": "Gift box", "group": "Shop" },
+            { "value": "bi-heart", "label": "Heart", "group": "Shop" },
+            { "value": "bi-ecology", "label": "Ecology", "group": "Shop" },
+            { "value": "bi-plant", "label": "Plant", "group": "Shop" },
+            { "value": "bi-shop", "label": "Shop", "group": "Shop" },
+            { "value": "bi-shop-pin", "label": "Shop with pin", "group": "Shop" },
+            { "value": "bi-alert", "label": "Alert", "group": "Communication" },
+            { "value": "bi-chat", "label": "Chat", "group": "Communication" },
+            { "value": "bi-comment", "label": "Comment", "group": "Communication" },
+            { "value": "bi-customer-support", "label": "Customer support", "group": "Communication" },
+            { "value": "bi-email", "label": "Email", "group": "Communication" },
+            { "value": "bi-network", "label": "Network", "group": "Communication" },
+            { "value": "bi-newsletter", "label": "Newsletter", "group": "Communication" },
+            { "value": "bi-love", "label": "Love", "group": "Communication" },
+            { "value": "bi-phone", "label": "Phone", "group": "Communication" },
+            { "value": "bi-share", "label": "Share", "group": "Communication" },
+            { "value": "bi-delivery", "label": "Delivery", "group": "Delivery" },
+            { "value": "bi-fast-delivery", "label": "Fast delivery", "group": "Delivery" },
+            { "value": "bi-returns", "label": "Returns", "group": "Delivery" },
+            { "value": "bi-time", "label": "Time", "group": "Delivery" },
+            { "value": "bi-secure-payment", "label": "Secure payment", "group": "Security" },
+            { "value": "bi-mobile-payment", "label": "Mobile payment", "group": "Security" },
+            { "value": "bi-computer-payment", "label": "Computer payment", "group": "Security" },
+            { "value": "bi-credit-card", "label": "Credit card", "group": "Security" },
+            { "value": "bi-shield", "label": "Shield", "group": "Security" }
+          ],
+          "default": "bi-customer-support"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Custom icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Your title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Short content about your store</p>"
+        },
+        {
+          "type": "url",
+          "id": "iconurl",
+          "label": "ICON URL",
+          "default": "/"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Free Shipping Easy Return",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "bi-add-to-cart", "title": "Financing Available" } },
+        { "type": "item", "settings": { "icon": "bi-returns", "title": "Satisfied or refunded" } },
+        { "type": "item", "settings": { "icon": "bi-customer-support", "title": "Top-notch support" } },
+        { "type": "item", "settings": { "icon": "bi-secure-payment", "title": "Secure payments" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,130 @@
+<section id="benefits_section" class="benefits-section">
+  <div class="section-container">
+    <div class="benefits-wrapper">
+      <div class="benefit-item">
+        <img
+          src="{{ section.settings.benefit_1_image | img_url: 'master' }}"
+          alt="{{ section.settings.benefit_1_title }}"
+        >
+        <div class="benefit-text">
+          <p class="benefit-title">{{ section.settings.benefit_1_title }}</p>
+          <p class="benefit-description">{{ section.settings.benefit_1_description }}</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <img
+          src="{{ section.settings.benefit_2_image | img_url: 'master' }}"
+          alt="{{ section.settings.benefit_2_title }}"
+        >
+        <div class="benefit-text">
+          <p class="benefit-title">{{ section.settings.benefit_2_title }}</p>
+          <p class="benefit-description">{{ section.settings.benefit_2_description }}</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <img
+          src="{{ section.settings.benefit_3_image | img_url: 'master' }}"
+          alt="{{ section.settings.benefit_3_title }}"
+        >
+        <div class="benefit-text">
+          <p class="benefit-title">{{ section.settings.benefit_3_title }}</p>
+          <p class="benefit-description">{{ section.settings.benefit_3_description }}</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <img
+          src="{{ section.settings.benefit_4_image | img_url: 'master' }}"
+          alt="{{ section.settings.benefit_4_title }}"
+        >
+        <div class="benefit-text">
+          <p class="benefit-title">{{ section.settings.benefit_4_title }}</p>
+          <p class="benefit-description">{{ section.settings.benefit_4_description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ 'benefits.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Benefits",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "benefit_1_image",
+      "label": "Benefit 1 Image"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_title",
+      "label": "Benefit 1 Title",
+      "default": "Free shipping"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_description",
+      "label": "Benefit 1 Description",
+      "default": "on $25+ orders"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_2_image",
+      "label": "Benefit 2 Image"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_title",
+      "label": "Benefit 2 Title",
+      "default": "Satisfied"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_description",
+      "label": "Benefit 2 Description",
+      "default": "or Refunded"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_3_image",
+      "label": "Benefit 3 Image"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_title",
+      "label": "Benefit 3 Title",
+      "default": "Large & High-Quality"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_description",
+      "label": "Benefit 3 Description",
+      "default": "Inventory"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_4_image",
+      "label": "Benefit 4 Image"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_title",
+      "label": "Benefit 4 Title",
+      "default": "Top-Notch"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_description",
+      "label": "Benefit 4 Description",
+      "default": "Support"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

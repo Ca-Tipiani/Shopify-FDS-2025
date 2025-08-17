@@ -1,0 +1,49 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "title": "Newsletter",
+        "content": "<p>A short sentence describing what someone will receive by subscribing</p>",
+        "background": "#1e2d7d",
+        "text": "#ffffff"
+      }
+    },
+    "607b6b40-f041-4293-a788-5ab9167ea4c3": {
+      "type": "custom-inner-banner",
+      "settings": {
+        "page": "tool-buying-guides",
+        "page_content": "<p>T Is A Long Established Fact That A Reader Will Be Distracted By The Readable Content Of A Page When Looking At Its Layout. The Point Of Using Lorem Ipsum Is That It Has A More-Or-Less Normal Distribution Of Letters, As Opposed To Using 'Content Here, Content Here', Making It Look Like Readable English. Many Desktop Publishing Packages And Web Page Editors Now Use Lorem Ipsum As Their Default Model Text, And A Search For 'Lorem Ipsum' Will Uncover Many Web Sites Still In Their Infancy. Various Versions Have Evolved Over The Years, Sometimes By Accident, Sometimes On Purpose (Injected Humour And The Like).</p>"
+      }
+    },
+    "a74eda16-2b2e-498a-9cd0-b1067f5b2fa8": {
+      "type": "custom-blog-block",
+      "settings": {
+        "title": "LATEST TOOL BUYING GUIDES",
+        "blog": "news",
+        "default_image": "shopify://shop_images/generator.jpg"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter",
+    "607b6b40-f041-4293-a788-5ab9167ea4c3",
+    "a74eda16-2b2e-498a-9cd0-b1067f5b2fa8"
+  ]
+}

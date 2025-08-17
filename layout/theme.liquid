@@ -1,0 +1,318 @@
+<!doctype html>
+
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <link rel="preload" href="https://factorydirectsupplyonline.com/cdn/shop/files/hero-home-bk.jpg?v=1736537762" as="image" type="image/jpeg">
+    <meta name="google-site-verification" content="6dHqzG-_CJEmZIhDA8o6B4zlspfcB_fd0adVt5GYwpw">
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KVN2XVR');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-MRLZ9K8"></script>
+
+    <meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0"
+    >
+    <meta name="theme-color" content="{{ settings.accent_color }}">
+    {{ 'custom-ss.css' | asset_url | stylesheet_tag }}
+
+    {%- capture seo_page_title -%}
+      {%- if request.page_type == 'search' and search.terms != blank -%}
+        {{ search.terms | split: ' AND ' | last | split: 'product_type:' | last }} - {{ shop.name }}
+      {%- else -%}
+        {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}
+      {%- endif -%}
+    {%- endcapture -%}
+
+    <title>{{- seo_page_title -}}</title>
+
+    {% if request.path == '/collections/all' %}
+      <meta name="description" content="Explore all products at Factory Direct Supply, including connectors, rebar tools, safety gear, and power tools. Shop online for fast shipping and great prices.">
+    {%- elsif page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '96x96' }}" type="image/png">
+    {%- endif -%}
+
+    {%- comment -%}Few prefech to increase performance on commonly used third-parties{%- endcomment -%}
+  
+    <link rel="preload" as="style" href="{{ 'theme.css' | asset_url }}">
+    <link rel="preload" as="script" href="{{ 'theme.js' | asset_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com">
+    <link rel="preconnect" href="https://fonts.shopifycdn.com">
+    <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
+    <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+    <link rel="dns-prefetch" href="https://maps.googleapis.com">
+    <link rel="dns-prefetch" href="https://maps.gstatic.com">
+    <link rel="stylesheet" href="{{ 'magnific-popup.css' | asset_url }}">
+    {% render 'social-meta-tags' %}
+    {% render 'css-variables' %}
+
+    {{ content_for_header }}
+
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+
+    {% render 'microdata-schema' %}
+
+    <script>
+      // This allows to expose several variables to the global scope, to be used in scripts
+      window.theme = {
+        pageType: {{ request.page_type | json }},
+        cartCount: {{ cart.item_count | json }},
+        moneyFormat: {{ shop.money_format | json }},
+        moneyWithCurrencyFormat: {{ shop.money_with_currency_format | json }},
+        currencyCodeEnabled: {{ settings.currency_code_enabled | json }},
+        showDiscount: {{ settings.show_discount | json }},
+        discountMode: {{ settings.discount_mode | json }},
+        cartType: {{ settings.cart_type | json }}
+      };
+
+      window.routes = {
+        rootUrl: {{ routes.root_url | json }},
+        rootUrlWithoutSlash: {% if routes.root_url == '/' %}''{% else %}{{ routes.root_url | json }}{% endif %},
+        cartUrl: {{ routes.cart_url | json }},
+        cartAddUrl: {{ routes.cart_add_url | json }},
+        cartChangeUrl: {{ routes.cart_change_url | json }},
+        searchUrl: {{ routes.search_url | json }},
+        productRecommendationsUrl: {{ routes.product_recommendations_url | json }}
+      };
+
+      window.languages = {
+        productRegularPrice: {{ 'product.general.regular_price' | t | json }},
+        productSalePrice: {{ 'product.general.sale_price' | t | json }},
+        collectionOnSaleLabel: {{ 'collection.product.discount_html' | t | json }},
+        productFormUnavailable: {{ 'product.form.unavailable' | t | json }},
+        productFormAddToCart: {{ 'product.form.add_to_cart' | t | json }},
+        productFormPreOrder: {{ 'product.form.pre_order' | t | json }},
+        productFormSoldOut: {{ 'product.form.sold_out' | t | json }},
+        productAdded: {{ 'product.form.added' | t | json }},
+        productAddedShort: {{ 'product.form.added_short' | t | json }},
+        shippingEstimatorNoResults: {{ 'cart.shipping_estimator.no_results_title' | t | json }},
+        shippingEstimatorOneResult: {{ 'cart.shipping_estimator.one_result_title' | t | json }},
+        shippingEstimatorMultipleResults: {{ 'cart.shipping_estimator.multiple_results_title' | t | json }},
+        shippingEstimatorErrors: {{ 'cart.shipping_estimator.errors' | t | json }}
+      };
+
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    </script>
+
+    {%- if request.page_type == 'customers/addresses' -%}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
+      <script src="{{ 'customer_area.js' | shopify_asset_url }}" defer></script>
+    {%- endif -%}
+
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
+
+    {%- if request.page_type != 'cart' -%}
+      <script>
+        (function () {
+          window.onpageshow = function () {
+            // We force re-freshing the cart content onpageshow, as most browsers will serve a cache copy when hitting the
+            // back button, which cause staled data
+            document.documentElement.dispatchEvent(
+              new CustomEvent('cart:refresh', {
+                bubbles: true,
+                detail: { scrollToTop: false },
+              })
+            );
+          };
+        })();
+      </script>
+    {%- endif -%}
+    <!-- add app snippet files of the 10-07-2023 -->
+    {% comment %}       {% render 'page-speed-optimization-header' %} {% endcomment %}
+    {% render 'local-business' %}
+
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, 'clarity', 'script', 'oxzake7b9v');
+    </script>
+  </head>
+
+  <body
+    class="warehouse--v4 {% if settings.animation_image_zoom %}features--animate-zoom{% endif%} template-{{ request.page_type | handle }} {% if request.page_type contains '/' %}template-{{ request.page_type | split: '/' | last | handle }}{% endif %}"
+    data-instant-intensity="viewport"
+  >
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KVN2XVR"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden;"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    {%- comment -%}Common SVG definitions that we are re-using in several places{%- endcomment -%}
+    <svg class="visually-hidden">
+      <linearGradient id="rating-star-gradient-half">
+        <stop offset="50%" stop-color="var(--product-review-star-color)" />
+        <stop offset="50%" stop-color="rgba(var(--text-color-rgb), .4)" stop-opacity="0.4" />
+      </linearGradient>
+    </svg>
+
+    <a href="#main" class="visually-hidden skip-to-content">{{ 'general.accessibility.skip_to_content' | t }}</a>
+    <span class="loading-bar"></span>
+
+    {%- sections 'header-group' -%}
+    {%- sections 'overlay-group' -%}
+
+    <main id="main" role="main">
+      {{ content_for_layout }}
+    </main>
+
+    {%- sections 'footer-group' -%}
+
+    <ul hidden>
+      <li id="a11y-new-window-message">{{ 'general.accessibility.new_window' | t }}</li>
+    </ul>       
+  </body>
+
+  <script>
+    const TOKEN = `onClick=window.open("https://www.clicklease.com/partner/factory-direct-supply-online");`;
+
+    function start() {
+      if (!document.querySelector('.ClkButton') && document.querySelector('.product-meta')) {
+        renderButton();
+      }
+    }
+
+    function renderButton() {
+      place = document.querySelector('.product-form__buy-buttons');
+      document.querySelector('.price-list .price.price--highlight')
+        ? (price = document.querySelector('.price-list .price.price--highlight'))
+        : (price = document.querySelector('price-list .price'));
+      amount = Number(price.innerText.replace(/[^0-9||\.]+/g, ''));
+      validation(amount, place);
+    }
+
+    function validation(amount, place, xhttp) {
+      var xhttp = new XMLHttpRequest();
+      if (amount >= 500 && amount <= 30000) {
+        xhttp.onreadystatechange = function (event) {
+          if (this.readyState == 4 && this.status == 200) {
+            var divContainer = document.createElement('div');
+            divContainer.className = 'ClkButton';
+            document.querySelector('.product-meta')
+              ? divContainer.setAttribute(
+                  'style',
+                  '    width: 300px; margin-left: auto;margin-right: auto; margin-top: 5px;margin-bottom: 3%;cursor: pointer;'
+                )
+              : divContainer.setAttribute(
+                  'style',
+                  '    width: 190px; margin-left: auto;margin-right: auto; margin-top: 5px;margin-bottom: 3%;cursor: pointer;'
+                );
+            place.after(divContainer);
+            document.querySelector('.product-meta')
+              ? (divContainer.innerHTML = buttonPriceNew(event))
+              : (divContainer.innerHTML = buttonPriceNew(event));
+          }
+        };
+      }
+      if (amount >= 500 && amount <= 30000) {
+        xhttp.open('GET', 'https://app.clicklease.com/api/estimatedPaymentAmount/' + amount, true);
+        xhttp.send();
+      }
+    }
+
+    const buttonPriceNew = (event) =>
+      `<svg ${TOKEN} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 342.83 74.96">
+    <style>
+      g:hover .border{fill:#d90000;}
+      .st0{fill:#707372;}
+      .st1{fill:#000000;}
+      .st2{fill:#FFFFFF;}
+      .border{ fill:#000000;stroke:#d90000; stroke-width:4 }
+      .st3{fill:none;stroke:#009FDF;stroke-width:0.85;stroke-miterlimit:10;}
+      .st4{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+      .st5{fill:none;stroke:#707372;stroke-miterlimit:10;}
+    </style>
+      <g id="copy"  transform="translate(-28.59 -27.52)">
+        <g id="Group_13" data-name="Group 13">
+          <path id="Path_3" class="border" data-name="Path 3" d="M333.93,29.52H66.07a35.48,35.48,0,1,0,0,70.96H333.94a35.48,35.48,0,1,0-.01-70.96Z"/>
+          <g id="Group_9" data-name="Group 9">
+            <g id="Group_8" data-name="Group 8">
+              <path class="st2" id="Path_4" data-name="Path 4" d="M73.37,70.59a8.91,8.91,0,1,1,0-11.18l9.19-4.1a18.81,18.81,0,1,0,0,19.36Z"/>
+              <path class="st2" id="XMLID_24980_" d="M88.73,56.71l-9.3,4.14L70.13,65l9.3,4.15,9.3,4.14L86.27,65h0Z"/>
+            </g>
+          </g>
+          <g id="Group_10" data-name="Group 10">
+            <path class="st2" id="Path_5" data-name="Path 5" d="M111.89,51.85v3.17h4.21v1.69h-4.21v4.62h-1.84V50.13h6.46v1.73h-4.62Z"/>
+            <path class="st2" id="Path_6" data-name="Path 6" d="M118.29,49.51h1.84v1.83h-1.84Zm.03,3.18h1.78v8.64h-1.78Z"/>
+            <path class="st2" id="Path_7" data-name="Path 7" d="M130.48,56.12v5.2H128.7V56.48c0-1.57-.68-2.4-1.98-2.4a2.386,2.386,0,0,0-2.32,2.62v4.63h-1.78V52.69h1.24l.34,1.21a3.649,3.649,0,0,1,2.99-1.4C129.22,52.49,130.48,54,130.48,56.12Z"/>
+            <path class="st2" id="Path_8" data-name="Path 8" d="M141.5,52.68v8.64h-1.43l-.17-1.05a4.352,4.352,0,0,1-3.13,1.27,4.535,4.535,0,0,1,0-9.07,4.324,4.324,0,0,1,3.16,1.29l.21-1.08ZM139.72,57a2.825,2.825,0,1,0-2.82,2.84A2.748,2.748,0,0,0,139.72,57Z"/>
+            <path class="st2" id="Path_9" data-name="Path 9" d="M151.89,56.12v5.2h-1.78V56.48c0-1.57-.68-2.4-1.98-2.4a2.386,2.386,0,0,0-2.32,2.62v4.63h-1.78V52.69h1.24l.34,1.21a3.649,3.649,0,0,1,2.99-1.4C150.63,52.49,151.89,54,151.89,56.12Z"/>
+            <path class="st2" id="Path_10" data-name="Path 10" d="M153.67,57a4.425,4.425,0,0,1,4.53-4.52,4.258,4.258,0,0,1,4.29,3.29h-1.76a2.783,2.783,0,1,0-2.53,4.07,2.68,2.68,0,0,0,2.52-1.66h1.79a4.307,4.307,0,0,1-4.31,3.36A4.442,4.442,0,0,1,153.67,57Z"/>
+            <path class="st2" id="Path_11" data-name="Path 11" d="M164.23,49.51h1.84v1.83h-1.84Zm.03,3.18h1.78v8.64h-1.78Z"/>
+            <path class="st2" id="Path_12" data-name="Path 12" d="M176.42,56.12v5.2h-1.78V56.48c0-1.57-.68-2.4-1.98-2.4a2.386,2.386,0,0,0-2.32,2.62v4.63h-1.78V52.69h1.24l.34,1.21a3.649,3.649,0,0,1,2.99-1.4C175.16,52.49,176.42,54,176.42,56.12Z"/>
+            <path class="st2" id="Path_13" data-name="Path 13" d="M187.07,52.69V60.2c0,2.76-1.64,4.44-4.31,4.44a4,4,0,0,1-4.23-3.05h1.77a2.654,2.654,0,0,0,5.03-1.15v-.4a4.314,4.314,0,0,1-2.86,1.03,4.3,4.3,0,1,1,3.15-7.27l.28-1.12h1.17Zm-1.75,4.09a2.655,2.655,0,1,0-2.65,2.64A2.564,2.564,0,0,0,185.32,56.78Z"/>
+            <path class="st2" id="Path_14" data-name="Path 14" d="M198.53,54.24h-2.45v7.08H194.3V54.24h-1.62V52.76h1.62v-.73a2.441,2.441,0,0,1,2.76-2.74h1.44v1.42h-1.1c-.96,0-1.38.4-1.38,1.37v.69h2.5v1.47Z"/>
+            <path class="st2" id="Path_15" data-name="Path 15" d="M203.78,61.54a4.531,4.531,0,1,1,4.62-4.53,4.461,4.461,0,0,1-4.62,4.53Zm2.81-4.53a2.81,2.81,0,1,0-2.81,2.84A2.721,2.721,0,0,0,206.59,57.01Z"/>
+            <path class="st2" id="Path_16" data-name="Path 16" d="M215.2,52.64v1.68h-.94c-1.47,0-2.2.84-2.2,2.4v4.61h-1.78V52.69h1.2l.3,1.18a3.084,3.084,0,0,1,2.65-1.23h.77Z"/>
+            <path class="st2" id="Path_17" data-name="Path 17" d="M228.8,52.68v8.64h-1.43l-.17-1.05a4.352,4.352,0,0,1-3.13,1.27,4.535,4.535,0,0,1,0-9.07,4.324,4.324,0,0,1,3.16,1.29l.21-1.08ZM227.02,57a2.825,2.825,0,1,0-2.82,2.84A2.748,2.748,0,0,0,227.02,57Z"/>
+            <path class="st2" id="Path_18" data-name="Path 18" d="M230.67,58.58h1.74c.05.91.81,1.39,1.86,1.39.95,0,1.69-.4,1.69-1.13,0-.82-.93-1.01-1.99-1.19-1.44-.25-3.14-.57-3.14-2.58,0-1.55,1.34-2.61,3.35-2.61s3.31,1.09,3.35,2.77h-1.68c-.03-.82-.66-1.26-1.7-1.26-.98,0-1.59.42-1.59,1.05,0,.76.88.91,1.92,1.09,1.46.24,3.24.53,3.24,2.66,0,1.68-1.4,2.77-3.51,2.77S230.72,60.38,230.67,58.58Z"/>
+            <path class="st2" id="Path_19" data-name="Path 19" d="M109.89,69.59h1.78V81.33h-1.78Z"/>
+            <path class="st2" id="Path_20" data-name="Path 20" d="M118.18,81.54a4.531,4.531,0,1,1,4.62-4.53,4.461,4.461,0,0,1-4.62,4.53Zm2.81-4.53a2.81,2.81,0,1,0-2.81,2.84A2.721,2.721,0,0,0,120.99,77.01Z"/>
+            <path class="st2" id="Path_21" data-name="Path 21" d="M136.62,72.69l-2.89,8.64h-1.44l-2.23-5.26-2.22,5.26H126.4l-2.9-8.64h1.83l1.95,5.82,2.48-5.73h.57l2.51,5.77,1.98-5.87h1.8Z"/>
+            <path class="st2" id="Path_22" data-name="Path 22" d="M150.59,72.68v8.64h-1.43l-.17-1.05a4.352,4.352,0,0,1-3.13,1.27,4.535,4.535,0,0,1,0-9.07,4.324,4.324,0,0,1,3.16,1.29l.21-1.08h1.36ZM148.81,77a2.825,2.825,0,1,0-2.82,2.84A2.748,2.748,0,0,0,148.81,77Z"/>
+            <path class="st2" id="Path_23" data-name="Path 23" d="M152.47,78.58h1.74c.04.91.81,1.39,1.85,1.39.96,0,1.69-.4,1.69-1.13,0-.82-.93-1.01-1.99-1.19-1.44-.25-3.14-.57-3.14-2.58,0-1.55,1.34-2.61,3.35-2.61s3.31,1.09,3.35,2.77h-1.68c-.03-.82-.66-1.26-1.71-1.26-.98,0-1.59.42-1.59,1.05,0,.76.88.91,1.92,1.09,1.46.24,3.24.53,3.24,2.66,0,1.68-1.4,2.77-3.51,2.77S152.51,80.38,152.47,78.58Z"/>
+            <text class="clicklease st2" x=53% y=109.7% style="font-size:14px;text-anchor: middle; font-family:Arial; font-weight:bold">$ ${
+              JSON.parse(event.currentTarget.response)['object']
+            }</text>
+            <path class="st2" id="Path_28" data-name="Path 28" d="M204.98,69.15h1.86l-4.75,13.37h-1.87Z"/>
+            <path class="st2" id="Path_29" data-name="Path 29" d="M221.13,75.83v5.5h-1.78V76.27c0-1.39-.61-2.19-1.68-2.19a2.248,2.248,0,0,0-2.03,2.52v4.73H213.9V76.27c0-1.39-.6-2.19-1.68-2.19a2.255,2.255,0,0,0-2.04,2.52v4.73H208.4V72.69h1.26l.31,1.12a3.458,3.458,0,0,1,2.69-1.31,2.827,2.827,0,0,1,2.59,1.51,3.415,3.415,0,0,1,2.82-1.51A3.044,3.044,0,0,1,221.13,75.83Z"/>
+            <path class="st2" id="Path_30" data-name="Path 30" d="M227.52,81.54a4.531,4.531,0,1,1,4.62-4.53,4.461,4.461,0,0,1-4.62,4.53Zm2.81-4.53a2.81,2.81,0,1,0-2.81,2.84A2.721,2.721,0,0,0,230.33,77.01Z"/>
+            <path class="st2" id="Path_31" data-name="Path 31" d="M233.62,79.29h1.95v2.04h-1.95Z"/>
+          </g>
+          <g id="Group_12" data-name="Group 12">
+            <g id="Group_11" data-name="Group 11">
+              <path class="st2" id="Path_32" data-name="Path 32" d="M297.22,59.92h-4.46L292,62.05h-2.57l4.39-11.2h2.29l4.53,11.2h-2.63Zm-3.7-2.11h2.94l-1.48-4.01Z"/>
+              <path class="st2" id="Path_33" data-name="Path 33" d="M310.72,54.7a3.816,3.816,0,0,1-3.96,3.85h-1.89v3.5h-2.42V50.85h4.31A3.8,3.8,0,0,1,310.72,54.7Zm-2.45,0a1.536,1.536,0,0,0-1.6-1.61h-1.78v3.22h1.78A1.541,1.541,0,0,0,308.27,54.7Z"/>
+              <path class="st2" id="Path_34" data-name="Path 34" d="M321.07,54.7a3.816,3.816,0,0,1-3.96,3.85h-1.89v3.5H312.8V50.85h4.31A3.8,3.8,0,0,1,321.07,54.7Zm-2.45,0a1.538,1.538,0,0,0-1.61-1.61h-1.78v3.22h1.78A1.544,1.544,0,0,0,318.62,54.7Z"/>
+              <path class="st2" id="Path_35" data-name="Path 35" d="M329.88,59.8v2.25h-6.72V50.85h2.42V59.8Z"/>
+              <path class="st2" id="Path_36" data-name="Path 36" d="M335.91,57.53v4.52h-2.49V57.51l-3.91-6.67h2.58l2.59,4.48,2.59-4.48h2.58Z"/>
+              <path class="st2" id="Path_37" data-name="Path 37" d="M301.41,70.04v11.2h-2.03l-5.07-7v7h-2.38V70.04h2.19l4.91,6.83V70.04Z"/>
+              <path class="st2" id="Path_38" data-name="Path 38" d="M303.7,75.65a5.966,5.966,0,1,1,5.98,5.85A5.783,5.783,0,0,1,303.7,75.65Zm9.47,0a3.51,3.51,0,1,0-3.5,3.56A3.45,3.45,0,0,0,313.17,75.65Z"/>
+              <path class="st2" id="Path_39" data-name="Path 39" d="M332.79,70.04l-3.46,11.2h-2.16l-2.5-6.28-2.43,6.28h-2.16l-3.54-11.2h2.57l2.2,7.44,2.94-7.33h.82l3.02,7.33,2.15-7.44Z"/>
+              <path class="st2" id="Path_40" data-name="Path 40" d="M334.67,78.75h2.48v2.5h-2.48Zm.05-9.03h2.37v7.91h-2.37Z"/>
+              <line class="st4" id="Line_1" data-name="Line 1" y2="43.96" transform="translate(270.09 43.02)" fill="none" stroke-miterlimit="10" stroke-width="1"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+    `;
+  </script>
+
+  <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
+  <script src="{{ 'custom.js' | asset_url }}" defer></script>
+  <script src="{{ 'jquery.magnific-popup.js' | asset_url }}" defer></script>
+</html>

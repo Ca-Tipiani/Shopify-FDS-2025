@@ -1,0 +1,141 @@
+<section
+  id="hero_home"
+  class="hero-home"
+  style="background-image: url({{ section.settings.hero_background_image | img_url: 'master' }});"
+>
+  <div class="section-container">
+    <div class="hero-content">
+      <p class="hero-subtitle">{{ section.settings.hero_subtitle }}</p>
+      <h1 class="hero-title">{{ section.settings.hero_title }}</h1>
+    </div>
+  </div>
+  <div class="hero-badges">
+    <img src="{{ section.settings.badge_1_image | img_url: 'master' }}" alt="Badge 1">
+    <img src="{{ section.settings.badge_2_image | img_url: 'master' }}" alt="Badge 2">
+    <img src="{{ section.settings.badge_3_image | img_url: 'master'}}" alt="Badge 3">
+  </div>
+</section>
+
+{{ 'hero-home.css' | asset_url | stylesheet_tag }}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (document.body.classList.contains('template-index')) {
+      const searchBarWrapper = document.querySelector('.header__search-bar-wrapper');
+      const heroHome = document.querySelector('#hero_home .hero-content .hero-title');
+
+      if (searchBarWrapper && heroHome) {
+        function insertAfter(newElement, referenceElement) {
+          const parent = referenceElement.parentNode;
+          if (referenceElement.nextSibling) {
+            parent.insertBefore(newElement, referenceElement.nextSibling);
+          } else {
+            parent.appendChild(newElement);
+          }
+        }
+        insertAfter(searchBarWrapper, heroHome);
+      }
+
+      const searchInput = document.querySelector('#hero_home .header__search-bar-wrapper .search-bar__input');
+      if (searchInput) {
+        searchInput.placeholder = 'Search for products, brands...';
+      }
+
+      const searchButton = document.querySelector('.header__search-bar-wrapper .search-bar__submit');
+      if (searchButton) {
+        const customButton = document.createElement('button');
+        customButton.type = 'submit';
+        customButton.className = 'custom-search-button';
+        customButton.innerHTML = 'Search';
+        searchButton.parentNode.replaceChild(customButton, searchButton);
+      }
+
+      if (window.innerWidth <= 768) {
+        const menuWrapper = document.querySelector('.search-bar__menu-wrapper');
+        const searchResults = document.querySelector('.search-bar__results');
+        const searchButton = document.querySelector('.custom-search-button');
+      
+        if (menuWrapper && searchResults && searchButton) {
+          const observer = new MutationObserver(() => {
+            const isMenuActive = menuWrapper.getAttribute('aria-hidden') === 'false';
+            const isResultsActive = searchResults.getAttribute('aria-hidden') === 'false';
+      
+            if (isMenuActive || isResultsActive) {
+              searchButton.style.display = 'none';
+            } else {
+              searchButton.style.display = '';
+            }
+          });
+      
+          observer.observe(menuWrapper, { attributes: true, attributeFilter: ['aria-hidden'] });
+          observer.observe(searchResults, { attributes: true, attributeFilter: ['aria-hidden'] });
+        }
+      
+        const closeButton = document.querySelector('.search-bar__close-button .search-bar__close-text');
+        if (closeButton) {
+          closeButton.innerHTML = `<svg class="icon icon--close" viewBox="0 0 19 19" role="presentation">
+            <path d="M9.1923882 8.39339828l7.7781745-7.7781746 1.4142136 1.41421357-7.7781746 7.77817459 7.7781746 7.77817456L16.9705627 19l-7.7781745-7.7781746L1.41421356 19 0 17.5857864l7.7781746-7.77817456L0 2.02943725 1.41421356.61522369 9.1923882 8.39339828z" fill="currentColor" fill-rule="evenodd"></path>
+          </svg>`;
+        }
+      
+        const inputField = document.querySelector('#hero_home .search-bar__input');
+        const closeButtonWrapper = document.querySelector('#hero_home .header__search-bar-wrapper .search-bar__close-button');
+      
+        if (inputField && closeButtonWrapper) {
+          closeButtonWrapper.addEventListener('click', () => {
+            if (inputField.value !== '') {
+              inputField.value = '';
+            }
+          });
+        }
+      }
+    }
+    
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Hero Home",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "hero_subtitle",
+      "label": "Subtitle",
+      "default": "YOUR ONE STOP SHOP FOR"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Title",
+      "default": "CONSTRUCTION SUPPLIES"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_1_image",
+      "label": "Badge 1 Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_2_image",
+      "label": "Badge 2 Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_3_image",
+      "label": "Badge 3 Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Home",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

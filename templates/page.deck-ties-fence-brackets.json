@@ -1,0 +1,123 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "title": "Newsletter",
+        "content": "<p>A short sentence describing what someone will receive by subscribing</p>",
+        "background": "#1e2d7d",
+        "text": "#ffffff"
+      }
+    },
+    "3c92679e-37ac-4735-a223-8c9c09b836c8": {
+      "type": "page-cold-formed-steel-connectors",
+      "blocks": {
+        "template--16793882460390__3c92679e-37ac-4735-a223-8c9c09b836c8-offer-1": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/dtt-djt14z-deck-joist-ties-category-button.jpg",
+            "blk_links": "shopify://collections/dtt-djt14z-deck-joist-ties",
+            "title": "DTT / DJT Deck Ties",
+            "content": ""
+          }
+        },
+        "template--16793882460390__3c92679e-37ac-4735-a223-8c9c09b836c8-offer-2": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/lscz-stair-stringer-connector-category-button.jpg",
+            "blk_links": "shopify://collections/lsc-stair-stringer-connectors",
+            "title": "LSC Stair-Stringer Connectors",
+            "content": ""
+          }
+        },
+        "c45a071b-cfa5-4699-bdff-f246f48b4189": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/dptz-deck-post-ties-category-button.jpg",
+            "blk_links": "shopify://collections/dptz-deck-post-ties",
+            "title": "DPTZ Deck Post Ties",
+            "content": ""
+          }
+        },
+        "75937de1-dd17-45f2-a0a6-7bde102fcbf7": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/kbs1z-knee-brace-stabilizers-category-button.jpg",
+            "blk_links": "shopify://collections/kbs1z-knee-brace-stabilizers",
+            "title": "KBS1Z Knee-Brace Stabilizers",
+            "content": ""
+          }
+        },
+        "0151b225-7960-4c23-9c37-9b208e7fc095": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/pgt-pipe-grip-ties-category-button.jpg",
+            "blk_links": "shopify://collections/pgt-pipe-grip-ties",
+            "title": "PGT Pipe Grip Ties",
+            "content": ""
+          }
+        },
+        "93bb8221-1e9f-48c1-9cde-425a8542d309": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/fb-fbr-fence-brackets-category-button.jpg",
+            "blk_links": "shopify://collections/fb-fbr-fence-brackets",
+            "title": "FB/FBR Fence Brackets",
+            "content": "<p>Write a few words about your offers or your shop.</p>"
+          }
+        },
+        "06601d17-b5be-4b60-9bcc-5a8d2aad55e3": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/ez-spikes-menders-bases-category-button.jpg",
+            "blk_links": "shopify://collections/e-z-spikes-menders-bases",
+            "title": "E-Z Spikes/Menders/Bases",
+            "content": ""
+          }
+        },
+        "01a01c2e-df3f-4e32-90ee-060b82a4b7e3": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/Gazebo-Tie-Category-Button.jpg",
+            "blk_links": "shopify://collections/gt-gazebo-ties",
+            "title": "GT Gazebo Ties",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16793882460390__3c92679e-37ac-4735-a223-8c9c09b836c8-offer-1",
+        "template--16793882460390__3c92679e-37ac-4735-a223-8c9c09b836c8-offer-2",
+        "c45a071b-cfa5-4699-bdff-f246f48b4189",
+        "75937de1-dd17-45f2-a0a6-7bde102fcbf7",
+        "0151b225-7960-4c23-9c37-9b208e7fc095",
+        "93bb8221-1e9f-48c1-9cde-425a8542d309",
+        "06601d17-b5be-4b60-9bcc-5a8d2aad55e3",
+        "01a01c2e-df3f-4e32-90ee-060b82a4b7e3"
+      ],
+      "settings": {
+        "items_per_row": 4,
+        "stack_mobile": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter",
+    "3c92679e-37ac-4735-a223-8c9c09b836c8"
+  ]
+}

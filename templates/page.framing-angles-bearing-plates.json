@@ -1,0 +1,113 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "title": "Newsletter",
+        "content": "<p>A short sentence describing what someone will receive by subscribing</p>",
+        "background": "#1e2d7d",
+        "text": "#ffffff"
+      }
+    },
+    "b89d9e9d-1121-4752-8e26-f5741b0423d8": {
+      "type": "page-cold-formed-steel-connectors",
+      "blocks": {
+        "template--16793890914534__b89d9e9d-1121-4752-8e26-f5741b0423d8-offer-1": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/a-angles-category-button.jpg",
+            "blk_links": "shopify://collections/a-angles",
+            "title": "A Angles",
+            "content": ""
+          }
+        },
+        "template--16793890914534__b89d9e9d-1121-4752-8e26-f5741b0423d8-offer-2": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/l-ls-ga-reinforcing-skewable-angles-category-button.jpg",
+            "blk_links": "shopify://collections/l-ls-ga-angles",
+            "title": "L/LS/GA Angles",
+            "content": ""
+          }
+        },
+        "ff44fdae-64e6-407b-82f0-36b753497576": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/ml24-ml26-angles-category-button.jpg",
+            "blk_links": "shopify://collections/ml24-ml26-angles",
+            "title": "ML Angles",
+            "content": ""
+          }
+        },
+        "af6c2478-afcf-4e7d-bd0f-11dce8a86556": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/ta-staircase-angles-category-button.jpg",
+            "blk_links": "shopify://collections/ta-staircase-angles",
+            "title": "TA Staircase Angles",
+            "content": ""
+          }
+        },
+        "7fd3b29b-4a92-40dc-9cfa-c0cc982053d6": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/hl-heavy-angles-category-button.jpg",
+            "blk_links": "shopify://collections/hl-heavy-angles",
+            "title": "Heavy Angles",
+            "content": ""
+          }
+        },
+        "6748d67c-e65d-4237-8654-786b0f8df77d": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/bearing-plate-category-image.jpg",
+            "blk_links": "shopify://collections/bearing-plates",
+            "title": "Bearing Plates",
+            "content": ""
+          }
+        },
+        "bb1b8d1d-df79-45b7-9511-8a65f74ebdc9": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/ltp4-ltp5-a34-a35-angles-category-button.jpg",
+            "blk_links": "shopify://collections/ltp4-ltp5-a34-a35-angles",
+            "title": "LTP4/LTP5/A34/A35 Framing Angles & Plates",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16793890914534__b89d9e9d-1121-4752-8e26-f5741b0423d8-offer-1",
+        "template--16793890914534__b89d9e9d-1121-4752-8e26-f5741b0423d8-offer-2",
+        "ff44fdae-64e6-407b-82f0-36b753497576",
+        "af6c2478-afcf-4e7d-bd0f-11dce8a86556",
+        "7fd3b29b-4a92-40dc-9cfa-c0cc982053d6",
+        "6748d67c-e65d-4237-8654-786b0f8df77d",
+        "bb1b8d1d-df79-45b7-9511-8a65f74ebdc9"
+      ],
+      "settings": {
+        "items_per_row": 4,
+        "stack_mobile": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter",
+    "b89d9e9d-1121-4752-8e26-f5741b0423d8"
+  ]
+}

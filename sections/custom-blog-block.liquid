@@ -1,0 +1,79 @@
+{% paginate section.settings.blog.articles by 9  %}
+  {% assign default = section.settings.default_image %}
+  <section class="blog-block">
+    <div class="container">
+      <h1>{{ section.settings.title }}</h1>
+      <div class="row">
+        {% for article in section.settings.blog.articles %}
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="blog-holder">
+              {% if article.image %}
+                <img src="{{ article.image | img_url: "master" }}" alt="{{ article.image.alt }}" loading="lazy" width="{{ article.image.width }}" height="{{ article.image.height }}">
+              {% else %}
+                <img src="{{ default | img_url: "master" }}" alt="{{ default.alt }}" loading="lazy" width="{{ default.width }}" height="{{ default.height }}">
+              {% endif %}
+              <h5><a class="stretched-link" href="{{ article.url }}">{{ article.title }}</a></h5>
+              <p>{{ article.excerpt_or_content | strip_html | truncatewords: 15  }}</p>
+              <small>{{ article.published_at | date: '%B %d, %Y'}}</small>
+            </div>
+            <!-- /.blog-holder -->
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% if paginate.pages > 1 %}
+    <section class="blog-nav">
+      <div class="container">
+        <div class="nav-pagination">
+          {% for part in paginate.parts %}
+            {% if part.is_link  %}
+              {{ part.title | link_to: part.url, class: 'page-numbers' }}
+            {% else %}
+              {{ part.title | link_to: '#', class: 'page-numbers current' }}
+            {% endif %}
+          {% endfor %}
+    {% comment %}
+          {% if paginate.next.is_link and paginate.parts.last %}
+            <a href="#" class="next page-numbers">Next ></a>
+          {% endif %}
+    {% endcomment %}
+        </div>
+        <!-- /.nav-pagination -->
+      </div>
+    </section>
+    <!-- /.blog-nav -->
+  {% endif %}
+{% endpaginate %}
+{% schema %}
+{
+  "name": "Custom Blog Block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "LATEST TOOL BUYING GUIDES AND GIFT GUIDES"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "image_picker",
+      "id": "default_image",
+      "label": "Default Image for Blogposts"
+    }
+  ],
+  "presets" : [{
+    "name" : "Custom Blog Block"
+  }]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,161 @@
+<section id="testimonials" class="testimonials">
+  <div class="section-container">
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+
+    <!-- Desktop Version (Grid) -->
+    <div class="testimonials-grid desktop-only">
+      {% for testimonial in section.blocks %}
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="name-stars">
+              <h3 class="testimonial-name">{{ testimonial.settings.name }}</h3>
+              <div class="testimonial-stars">
+                {% for i in (1..5) %}
+                  <span>{% render 'star.svg' %}</span>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="quote-cont">
+              <div class="testimonial-quote">
+                {% render 'quote.svg' %}
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <p>{{ testimonial.settings.content }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Mobile Version (Swiper.js) -->
+    <div class="testimonials-carousel swiper mobile-only">
+      <div class="testimonials-wrapper swiper-wrapper">
+        {% for testimonial in section.blocks %}
+          <div class="testimonial-card swiper-slide">
+            <div class="testimonial-header">
+              <div class="name-stars">
+                <h3 class="testimonial-name">{{ testimonial.settings.name }}</h3>
+                <div class="testimonial-stars">
+                  {% for i in (1..5) %}
+                    <span>{% render 'star.svg' %}</span>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="quote-cont">
+                <div class="testimonial-quote">
+                  {% render 'quote.svg' %}
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-content">
+              <p>{{ testimonial.settings.content }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+
+      <!-- Custom navigation arrows -->
+      <button class="swiper-button swiper-button-prev" aria-label="Previous Slide"></button>
+      <button class="swiper-button swiper-button-next" aria-label="Next Slide"></button>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper.js CSS CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+<!-- Swiper.js JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<!-- Swiper.js Initialization -->
+<script>
+  
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.innerWidth <= 768) {
+      const swiper = new Swiper(".testimonials-carousel", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        on: {
+          init: function () {
+            updateArrows(swiper);
+          },
+          slideChange: function () {
+            updateArrows(swiper);
+          },
+        },
+      });
+  
+      function updateArrows(swiper) {
+        const prevButton = document.querySelector(".swiper-button-prev");
+        const nextButton = document.querySelector(".swiper-button-next");
+  
+        if (swiper.isBeginning) {
+          prevButton.classList.add("swiper-button-disabled");
+        } else {
+          prevButton.classList.remove("swiper-button-disabled");
+        }
+  
+        if (swiper.isEnd) {
+          nextButton.classList.add("swiper-button-disabled");
+        } else {
+          nextButton.classList.remove("swiper-button-disabled");
+        }
+      }
+    }
+  });
+  
+
+
+</script>
+
+{{ 'testimonials.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Why Our Clients Trust Us"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Gary S."
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Testimonial Content",
+          "default": "I found a particular item on your website that was unavailable in other places I searched. Ordering process was easy to use."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

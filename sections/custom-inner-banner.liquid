@@ -1,0 +1,42 @@
+<section class="inner-banner">
+  <div class="container">
+    <h1>{{ section.settings.page.title }}</h1>
+    {% if section.settings.page.content != empty %}
+      {{ section.settings.page.content }}
+    {% else %}
+      {{ section.settings.page_content }}
+    {% endif %}
+  </div>
+</section>
+<!-- /.inner-banner -->
+{% schema %}
+{
+  "name": "Custom Inner Banner",
+  "settings": [
+    {
+      "type": "page",
+      "label": "Page",
+      "id": "page"
+    },
+    {
+      "type": "textarea",
+      "label": "Content",
+      "id": "page_content",
+      "default": "<p>Demo Content</p>"
+    }
+  ],
+  "presets": [{
+    "name": "Custom Inner Banner",
+    "settings": {
+      "page": "Page Title",
+      "page_content": "Demo Content"
+    }
+  }]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

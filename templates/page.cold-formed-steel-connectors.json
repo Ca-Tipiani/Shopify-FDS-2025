@@ -1,0 +1,243 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "title": "Newsletter",
+        "content": "<p>A short sentence describing what someone will receive by subscribing</p>",
+        "background": "#1e2d7d",
+        "text": "#ffffff"
+      }
+    },
+    "78893c7d-d899-41b8-b4ea-3c1982e8fb7f": {
+      "type": "page-cold-formed-steel-connectors",
+      "blocks": {
+        "template--16793348210918__78893c7d-d899-41b8-b4ea-3c1982e8fb7f-offer-1": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/subh-bridging-connectors-category-button.jpg",
+            "blk_links": "shopify://collections/subh-bridging-connectors",
+            "title": "SUBH Bridging Connectors",
+            "content": ""
+          }
+        },
+        "template--16793348210918__78893c7d-d899-41b8-b4ea-3c1982e8fb7f-offer-2": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/sdtt2z-sltt-tension-ties-category-button.jpg",
+            "blk_links": "shopify://collections/s-dtt2z-s-ltt-tension-ties",
+            "title": "S/DTT2Z - S/LTT Tension Ties",
+            "content": ""
+          }
+        },
+        "119e2f8d-d0e8-4217-9953-f8bdab78e0ac": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/shd-shdu-holdowns-category-button.jpg",
+            "blk_links": "shopify://collections/s-hd-s-hdu-holdowns",
+            "title": "Holdowns and Tension Ties",
+            "content": ""
+          }
+        },
+        "5b442caf-8083-41eb-9767-7c2013e40232": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/s-ba-top-flange-hangers-category-button.jpg",
+            "blk_links": "shopify://collections/s-ba-top-flange-hangers",
+            "title": "Joist Framing Connectors",
+            "content": ""
+          }
+        },
+        "2b5e635d-9c79-44ad-b143-4e2559c58b44": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/sjct-steel-joist-connectors-category-button.jpg",
+            "blk_links": "shopify://collections/s-jct-steel-joist-connectors",
+            "title": "S/JCT Steel-Joist Connectors",
+            "content": ""
+          }
+        },
+        "e2649fef-8ecd-4194-976c-9f4c58dcbd68": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/mscb-scb-bypass-framing-side-clip-connectors-category-button.jpg",
+            "blk_links": "shopify://collections/mscb-scb-framing-connectors",
+            "title": "MSCB/SCB Framing Connectors",
+            "content": ""
+          }
+        },
+        "1dedd328-2b18-4449-b8fb-4e0ccbf19422": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/scw-slide-clip-connector-category-button.jpg",
+            "blk_links": "shopify://collections/sc-scw-slide-clip-connectors",
+            "title": "SC/SCW Slide-Clip Connectors",
+            "content": ""
+          }
+        },
+        "cf69db71-03c5-4d4e-82fd-04c7e3d0ff7d": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/fcb-bypass-framing-connector-category-button.jpg",
+            "blk_links": "shopify://collections/fcb-bypass-framing-connectors",
+            "title": "FCB/MFCB Bypass Framing Connectors",
+            "content": ""
+          }
+        },
+        "67ab41ce-8a7c-442f-85c7-4e8ab61e8018": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/sfc-lsfc-cfs-utility-clips-category-button.jpg",
+            "blk_links": "shopify://collections/sfc-lsfc-cfs-utility-clips",
+            "title": "SFC Steel Framing Connectors",
+            "content": ""
+          }
+        },
+        "57c9ff00-e970-4e1f-9b99-489c2f98faae": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/sjc-msjc-steel-joist-connectors-category-button.jpg",
+            "blk_links": "shopify://collections/sjc-msjc-steel-joist-connectors",
+            "title": "SJC/MSJC Steel-Joist Connectors",
+            "content": ""
+          }
+        },
+        "ab686a0c-103a-41d0-bb34-66234ee77b1c": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/sfc-lsfc-cfs-utility-clips-category-button.jpg",
+            "blk_links": "shopify://collections/ssc-lssc-mssc-stud-connectors",
+            "title": "SSC/LSSC/MSSC Stud Connectors",
+            "content": ""
+          }
+        },
+        "90a011f1-9080-4228-b9d3-ac2fe9193237": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/rca-rigid-connector-angels-category-button.jpg",
+            "blk_links": "shopify://collections/rca-rigid-connector-angles",
+            "title": "RCA Rigid Connector Angles",
+            "content": ""
+          }
+        },
+        "bcc49dea-6b95-408d-b4ea-3413455b6ed5": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/RCKW55_c5dffb1a-3b36-47fd-96e1-f1d8d7d25fe9.jpg",
+            "blk_links": "shopify://collections/rckw-rigid-kneewall-connectors",
+            "title": "RCKW Kneewall Connectors",
+            "content": ""
+          }
+        },
+        "5ee177c0-a2b7-4b70-8755-bf4e2e5832a1": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/sls-cfs-reinforcing-angles-category-button.jpg",
+            "blk_links": "shopify://collections/s-ls-cfs-reinforcing-angles",
+            "title": "S/LS Reinforcing Angles",
+            "content": ""
+          }
+        },
+        "c65c2095-86cc-45e1-82ab-4aa511290765": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/CF_S-HGAM10KT_ProdPho_RI_Prod_HurricaneGussetAngleforMasonry_C0_510124bb-540c-4e59-b6fc-33aa60c17481.jpg",
+            "blk_links": "shopify://collections/s-hgam10kt-gable-truss-bracket",
+            "title": "S/HGAM Hurricane Gusset Angle",
+            "content": ""
+          }
+        },
+        "5293b62a-7f8d-45b7-896b-1f1ae2e7e641": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/shtc-heavy-truss-clip-category-button.jpg",
+            "blk_links": "shopify://collections/steel-roof-truss-clip",
+            "title": "Steel Roof Truss Clip",
+            "content": ""
+          }
+        },
+        "bbe649c3-03e3-432f-9daa-b065de575ecb": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/Steel-Header-Hanger-Category-Button.jpg",
+            "blk_links": "shopify://collections/steel-header-hangers",
+            "title": "Steel Header Hangers",
+            "content": ""
+          }
+        },
+        "bf7c0325-a629-4fa8-a01d-023b34744d58": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/SCHA-Category-Button.jpg",
+            "blk_links": "shopify://collections/scha-slide-clip-connectors",
+            "title": "SCHA Slide-Clip Connectors",
+            "content": ""
+          }
+        },
+        "4db3d811-f6fc-4383-8d7d-7563e8891897": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/Drift-Strut-Connector-Category-Button.jpg",
+            "blk_links": "shopify://collections/dsscb-bypass-framing-connectors",
+            "title": "DSSCB Bypass Framing Connectors",
+            "content": ""
+          }
+        },
+        "2d0ff2b3-4229-42e4-b7ab-04612f15a0fc": {
+          "type": "offer",
+          "settings": {
+            "image": "shopify://shop_images/SBR-DBR-Category-Button.jpg",
+            "blk_links": "shopify://collections/sbr-dbr-spacer-bracers",
+            "title": "SBR/DBR Spacer Bracers",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16793348210918__78893c7d-d899-41b8-b4ea-3c1982e8fb7f-offer-1",
+        "template--16793348210918__78893c7d-d899-41b8-b4ea-3c1982e8fb7f-offer-2",
+        "119e2f8d-d0e8-4217-9953-f8bdab78e0ac",
+        "5b442caf-8083-41eb-9767-7c2013e40232",
+        "2b5e635d-9c79-44ad-b143-4e2559c58b44",
+        "e2649fef-8ecd-4194-976c-9f4c58dcbd68",
+        "1dedd328-2b18-4449-b8fb-4e0ccbf19422",
+        "cf69db71-03c5-4d4e-82fd-04c7e3d0ff7d",
+        "67ab41ce-8a7c-442f-85c7-4e8ab61e8018",
+        "57c9ff00-e970-4e1f-9b99-489c2f98faae",
+        "ab686a0c-103a-41d0-bb34-66234ee77b1c",
+        "90a011f1-9080-4228-b9d3-ac2fe9193237",
+        "bcc49dea-6b95-408d-b4ea-3413455b6ed5",
+        "5ee177c0-a2b7-4b70-8755-bf4e2e5832a1",
+        "c65c2095-86cc-45e1-82ab-4aa511290765",
+        "5293b62a-7f8d-45b7-896b-1f1ae2e7e641",
+        "bbe649c3-03e3-432f-9daa-b065de575ecb",
+        "bf7c0325-a629-4fa8-a01d-023b34744d58",
+        "4db3d811-f6fc-4383-8d7d-7563e8891897",
+        "2d0ff2b3-4229-42e4-b7ab-04612f15a0fc"
+      ],
+      "settings": {
+        "items_per_row": 4,
+        "stack_mobile": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter",
+    "78893c7d-d899-41b8-b4ea-3c1982e8fb7f"
+  ]
+}

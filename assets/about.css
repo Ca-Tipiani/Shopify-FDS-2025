@@ -1,0 +1,146 @@
+#about {
+  background-color: #f3f5f6;
+  padding: 40px 15px 7px;
+}
+
+#about .section-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#about .about-content {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: -5px;
+}
+
+#about .about-image {
+  flex: 0 0 48.7%;
+}
+
+#about .about-image img {
+  width: 100%;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  object-fit: cover;
+  height: 100%;
+}
+
+#about .about-text {
+  flex: 0 0 51.3%;
+  background-color: #fff;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding: 72px 85px 80px 97px;
+  display: flex;
+  align-items: center;
+}
+
+#about .about-text-inner {
+  text-align: left;
+  width: 100%;
+}
+
+#about .about-text-inner p {
+  color: #131921;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 33px;
+  margin: 15px 0 20px;
+}
+
+#about .about-subtitle {
+  font-size: 23px;
+  font-weight: 700;
+  color: #131921;
+  margin-bottom: 0;
+}
+
+#about .about-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+#about .about-button {
+  display: inline-block;
+  background-color: #e4002b;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+  width: 226px;
+  height: 50px;
+  font-size: 14.25px;
+  line-height: 29px;
+  font-weight: 700;
+  text-align: center;
+}
+
+#about .about-button:hover {
+  background-color: #c10510;
+}
+
+@media (max-width: 768px) {
+  #about {
+    margin-bottom: -10px;
+    padding: 0 20px 7px;
+  }
+
+  #about .about-content {
+    margin-top: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #about .about-image {
+    text-align: center;
+  }
+
+  #about .about-image,
+  #about .about-text {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  #about .about-image img {
+    height: auto;
+  }
+
+  #about .about-image img {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: inherit;
+  }
+
+  #about .about-subtitle {
+    font-size: 20px;
+  }
+
+  #about .about-text {
+    padding: 20px 30px 30px 30px;
+  }
+
+  #about .about-button {
+    min-width: 100%;
+  }
+
+  #about .about-text-inner p {
+    font-size: 17px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1000px) {
+  #about .about-text {
+    padding: 35px;
+  }
+}
