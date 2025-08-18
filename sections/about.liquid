@@ -3,18 +3,44 @@
     <h2 class="section-title">{{ section.settings.title }}</h2>
     <div class="about-content">
       <!-- Left Column: Image -->
-      <div class="about-image">
-        <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image_alt }}">
-      </div>
+
+<div class="about-image">
+  {% if section.settings.image %}
+    <img 
+      src="{{ section.settings.image | image_url: width: 800 }}" 
+      alt="{{ section.settings.image.alt | default: section.settings.image_alt | escape }}"
+      loading="lazy"
+      width="800"
+      height="auto">
+  {% else %}
+    <!-- Placeholder or default image -->
+    <div class="image-placeholder">
+      <p>No image selected</p>
+    </div>
+  {% endif %}
+</div>
 
       <!-- Right Column: Text Content -->
-      <div class="about-text">
-        <div class="about-text-inner">
-          <h3 class="about-subtitle">{{ section.settings.subtitle }}</h3>
-          {{ section.settings.description | raw }}
-          <a href="{{ section.settings.button_link }}" class="about-button">{{ section.settings.button_text }}</a>
-        </div>
+
+<div class="about-text">
+  <div class="about-text-inner">
+    {% if section.settings.subtitle %}
+      <h3 class="about-subtitle">{{ section.settings.subtitle | escape }}</h3>
+    {% endif %}
+    
+    {% if section.settings.description %}
+      <div class="about-description">
+        {{ section.settings.description }}
       </div>
+    {% endif %}
+    
+    {% if section.settings.button_text and section.settings.button_link %}
+      <a href="{{ section.settings.button_link | escape }}" class="about-button" aria-label="{{ section.settings.button_text | escape }}">
+        {{ section.settings.button_text | escape }}
+      </a>
+    {% endif %}
+  </div>
+</div>
     </div>
   </div>
 </section>
